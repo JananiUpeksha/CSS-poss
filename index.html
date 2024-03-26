@@ -61,32 +61,32 @@
 <section class="customer">
     <div class="card">
         <div class="card-header">
-            Customer Manage Form
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Add Customer</button>
+            Item Manage Form
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Add Item</button>
         </div>
 
         <form>
             <div class="form-group search-group">
                 <select id="selectName" class="form-select">
-                    <option>Search Name</option>
+                    <option>Search Item</option>
                 </select>
                 <a href="#" id="search-button" class="btn btn-primary">Search</a>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-field-group">
-                        <input type="text" class="form-control" id="nid" placeholder="Enter Name/ID Here">
+                        <input type="text" class="form-control" id="iid" placeholder="Item ID">
                     </div>
                     <div class="text-field-group">
-                        <input type="text" class="form-control" id="nname" placeholder="Enter Name/ID Here">
+                        <input type="text" class="form-control" id="iname" placeholder="Item Name">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="text-field-group">
-                        <input type="text" class="form-control" id="naddress" placeholder="Enter Name/ID Here">
+                        <input type="text" class="form-control" id="iprice" placeholder="Item Price">
                     </div>
                     <div class="text-field-group">
-                        <input type="text" class="form-control" id="ncontact" placeholder="Enter Name/ID Here">
+                        <input type="text" class="form-control" id="iquntity" placeholder="Item Quantity">
                     </div>
                 </div>
             </div>
@@ -97,10 +97,10 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Contact</th>
+            <th scope="col">Item ID</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Item Price</th>
+            <th scope="col">Item Quantity</th>
         </tr>
         </thead>
         <tbody>
@@ -131,14 +131,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Customer</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" id="id" placeholder="Customer ID">
-                <input type="text" class="form-control" id="newname" placeholder="Customer Name">
-                <input type="text" class="form-control" id="address" placeholder="Customer Address">
-                <input type="text" class="form-control" id="contact" placeholder="Customer Contact">
+                    <input type="text" class="form-control" id="mid" placeholder="Item ID">
+                    <input type="text" class="form-control" id="mname" placeholder="Item Name">
+                    <input type="text" class="form-control" id="mprice" placeholder="Item Price">
+                    <input type="text" class="form-control" id="mquntity" placeholder="Item Quantity">
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save</button>
