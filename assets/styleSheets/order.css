@@ -1,0 +1,158 @@
+.bg-body-tertiary {
+    background-color:#10182f !important; /* Change background color to red */
+}
+.navbar .navbar-nav .nav-link {
+    color: white !important; /* Change font color to white */
+}
+
+
+.navbar-nav {
+    margin-left: 1350px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 50px;
+}
+.order-container {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+.order {
+    width: 350px; /* Width of each card */
+    height: 450px; /* Balanced height of each card */
+    position: relative;
+}
+.order {
+    width: 600px;
+}
+.form-select#selectName {
+    width: 300px; /* Same width as text fields */
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.text-field-group {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Add margin from left */
+    margin-right: 10px; /* Add margin from right */
+}
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card-header{
+    background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
+}
+#add{
+    background-color: #ffe0b9;
+    border: #ffe0b9;
+    color: black;
+}
+#purchase{
+    background-color: #e2a9ca;
+    border: #e2a9ca;
+    color: black;
+}
+.form-label {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+.order #selectName {
+    width: 215px; /* Same width as text fields */
+    display: inline-block;
+    margin-top: -4px;
+}
+#add{
+    margin-top: 57px;
+    margin-left: 3px;
+    width: 100%;
+}
+.subtotal,
+.nettotal {
+    display: flex;
+    align-items: center;
+}
+
+.subtotal label,
+.nettotal label {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.subtotal input,
+.nettotal input {
+    margin-left: -100px; /* Adjust the margin as needed */
+}
+#balance {
+    width: 100%;
+}
+#purchase{
+    width: 100%;
+    margin-top: 52px;
+    margin-left: 3px;
+}
+#tbl{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-left: 0;
+    }
+    .order-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .order {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form-select#selectName {
+        width: 100%;
+    }
+    .text-field-group {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .order #selectName {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar-nav {
+        margin-left: 0;
+    }
+    .order-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .order {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .form-select#selectName {
+        width: 100%;
+    }
+    .text-field-group {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .order #selectName {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

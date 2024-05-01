@@ -122,7 +122,17 @@
             color: black;
         }
 
-
+        @media (max-width: 320px) {
+            .navbar {
+                z-index: 1; /* Ensure navbar is above other elements */
+            }
+            .item {
+                position: relative; /* Ensure the card respects the navbar's z-index */
+                z-index: 0; /* Set a lower z-index for the card */
+                width: auto; /* Adjust width for smaller screens */
+                padding: 10px; /* Add padding for smaller screens */
+            }
+        }
         @media (max-width: 768px) {
             .navbar-nav {
                 overflow: hidden;
@@ -138,15 +148,34 @@
                 max-width: 100%; /* Adjust modal width for smaller screens */
             }
         }
-        @media (max-width: 320px) {
-            .navbar {
-                z-index: 1; /* Ensure navbar is above other elements */
+        @media (max-width: 1024px) {
+            .navbar-nav {
+                overflow: hidden;
+                margin-left: 0; /* Reset margin for smaller screens */
             }
             .item {
-                position: relative; /* Ensure the card respects the navbar's z-index */
-                z-index: 0; /* Set a lower z-index for the card */
                 width: auto; /* Adjust width for smaller screens */
                 padding: 10px; /* Add padding for smaller screens */
+                position: relative; /* Ensure the card respects the navbar's z-index */
+                z-index: 0; /* Set a lower z-index for the card */
+            }
+            .modal {
+                max-width: 100%; /* Adjust modal width for smaller screens */
+            }
+        }
+        @media (max-width: 1440px) {
+            .navbar-nav {
+                overflow: hidden;
+                margin-left: 0; /* Reset margin for smaller screens */
+            }
+            .item {
+                width: auto; /* Adjust width for smaller screens */
+                padding: 10px; /* Add padding for smaller screens */
+                position: relative; /* Ensure the card respects the navbar's z-index */
+                z-index: 0; /* Set a lower z-index for the card */
+            }
+            .modal {
+                max-width: 100%; /* Adjust modal width for smaller screens */
             }
         }
 
@@ -161,19 +190,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="Dashboard.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Customers</a>
+                    <a class="nav-link active" aria-current="page" href="Customer.html">Customers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Items</a>
+                    <a class="nav-link active" aria-current="page" href="Item.html">Items</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Orders</a>
+                    <a class="nav-link active" aria-current="page" href="PlaceOrder.html">Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Details</a>
+                    <a class="nav-link active" aria-current="page" href="Details.html">Details</a>
                 </li>
 
             </ul>

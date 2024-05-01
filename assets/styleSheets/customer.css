@@ -1,0 +1,183 @@
+.navbar {
+    min-height: 80px; /* Adjust the height as needed */
+    padding-top: 10px; /* Adjust the top padding for vertical centering */
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+.bg-body-tertiary {
+    background-color:#10182f !important; /* Change background color to red */
+}
+.navbar .navbar-nav .nav-link {
+    color: white !important; /* Change font color to white */
+}
+
+.navbar-nav {
+    margin-left: 1350px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 50px;
+}
+.customer {
+    width: 1500px;
+    height: 800px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card-header{
+    background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
+}
+.form-select#selectCustomer {
+    width: auto;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#searchCustomer {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: -3px;
+    background-color: #e2a9ca;
+    border: #e2a9ca;
+    color: black;
+}
+.form-group.search-group {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#addCustomer{
+    margin-left: 10px;
+    background-color: #e2a9ca;
+    border: #e2a9ca;
+    margin-bottom: 3px;
+    color: black;
+}
+.table{
+    margin-top: 50px;
+}
+.modal-body .form-control {
+    margin-bottom: 20px;
+}
+.text-field-group {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#updateCustomer,
+#deleteCustomer {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: #ffe0b9;
+    border: #ffe0b9;
+    color: black;
+}
+/*-----------------------------------------------------------*/
+.modal{
+    margin: auto;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+.modal-header{
+    background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
+    color: black;
+}
+#saveCustomer{
+    background-color: #e2a9ca;
+    border: #e2a9ca;
+    color: black;
+}
+#closeCustomer{
+    background-color: #ffe0b9;
+    border: #ffe0b9;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .customer {
+        width: auto; /* Adjust width for smaller screens */
+        padding: 10px; /* Add padding for smaller screens */
+        position: relative; /* Ensure the card respects the navbar's z-index */
+        z-index: 0; /* Set a lower z-index for the card */
+    }
+    .modal {
+        max-width: 100%; /* Adjust modal width for smaller screens */
+    }
+}
+@media (max-width: 320px) {
+    .navbar {
+        z-index: 1; /* Ensure navbar is above other elements */
+    }
+    .customer {
+        position: relative; /* Ensure the card respects the navbar's z-index */
+        z-index: 0; /* Set a lower z-index for the card */
+        width: auto; /* Adjust width for smaller screens */
+        padding: 10px; /* Add padding for smaller screens */
+    }
+}
+@media (max-width: 1440px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .customer {
+        width: auto; /* Adjust width for smaller screens */
+        padding: 10px; /* Add padding for smaller screens */
+        position: relative; /* Ensure the card respects the navbar's z-index */
+        z-index: 0; /* Set a lower z-index for the card */
+    }
+    .modal {
+        max-width: 100%; /* Adjust modal width for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .customer {
+        width: auto; /* Adjust width for smaller screens */
+        padding: 10px; /* Add padding for smaller screens */
+        position: relative; /* Ensure the card respects the navbar's z-index */
+        z-index: 0; /* Set a lower z-index for the card */
+    }
+    .modal {
+        max-width: 100%; /* Adjust modal width for smaller screens */
+    }
+}
+@media (max-width: 320px) {
+    .navbar {
+        z-index: 1; /* Ensure navbar is above other elements */
+    }
+    .customer {
+        position: relative; /* Ensure the card respects the navbar's z-index */
+        z-index: 0; /* Set a lower z-index for the card */
+        width: auto; /* Adjust width for smaller screens */
+        padding: 10px; /* Add padding for smaller screens */
+    }
+}

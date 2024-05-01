@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Madimi+One&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/customer.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/item.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/order.css">
+    <style>
+        /*.card{
+            width: 1500px;
+            height: 800px;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }*/
+        .cardCustomer,.cardItem{
+            width: 1500px;
+            height: 350px;
+            top:100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        }
+        .cardC-header,.cardT-header{
+            background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
+            height: 50px;
+            display: flex;
+            align-items: center; /* Center vertically */
+            padding-left: 20px;
+        }
+        .tableContainer{
+            max-width: 1500px; /* Adjust as needed */
+            margin: auto; /* Center the table */
+        }
+
+        /*------------------------------------------------item-----------------------------------*/
+
+        /*body{
+            margin: 0;
+            padding: 0;
+        }
+        .card{
+            position: absolute;
+            left: 30px;
+            width: 600px;
+        }
+        .table{
+            width: 1000px;
+            position: absolute;
+            right: 0;
+        }*/
+        .order-container {
+            display: flex;
+            justify-content: space-around;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .order {
+            width: 350px; /* Width of each card */
+            height: 450px; /* Balanced height of each card */
+            position: relative;
+        }
+        .order {
+            width: 600px;
+        }
+        .form-select#selectName {
+            width: 300px; /* Same width as text fields */
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        .text-field-group {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px; /* Add margin from left */
+            margin-right: 10px; /* Add margin from right */
+        }
+
+        #add{
+            background-color: #ffe0b9;
+            border: #ffe0b9;
+            color: black;
+        }
+        #purchase{
+            background-color: #e2a9ca;
+            border: #e2a9ca;
+            color: black;
+        }
+        .form-label {
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+        .order #selectName {
+            width: 215px; /* Same width as text fields */
+            display: inline-block;
+            margin-top: -4px;
+        }
+        #add{
+            margin-top: 57px;
+            margin-left: 3px;
+            width: 100%;
+        }
+        .subtotal,
+        .nettotal {
+            display: flex;
+            align-items: center;
+        }
+
+        .subtotal label,
+        .nettotal label {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .subtotal input,
+        .nettotal input {
+            margin-left: -100px; /* Adjust the margin as needed */
+        }
+        #balance {
+            width: 100%;
+        }
+        #purchase{
+            width: 100%;
+            margin-top: 52px;
+            margin-left: 3px;
+        }
+        #tblOrders{
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .tableContainerOrders{
+            width: 1800px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" id="navDash" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="navCustomer"  >Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"  id="navItem" >Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="navOrders" >Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="navDetails">Details</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--------------------------------Dashboard----------------------------------------------------------->
+<section id="dashboardSection">
+    <section id="info">
+        <div id="i1" class="row">
+            <div class="col">
+                <p id="1">New Orders</p>
+                <p id="1c"><i class="fas fa-bell"></i><span class="icon-text-gap"> </span>14</p>
+                <p id="1b">Update every new order</p>
+            </div>
+        </div>
+        <div id="i2" class="row">
+            <div class="col">
+                <p id="2">New Orders</p>
+                <p id="2c"><i class="fas fa-money-bill-wave"></i><span class="icon-text-gap"> </span>14</p>
+                <p id="2b">Update every new order</p>
+            </div>
+        </div>
+        <div id="i3" class="row">
+            <div class="col">
+                <p id="3">New Orders</p>
+                <p id="3c"><i class="fas fa-users"></i><span class="icon-text-gap"> </span>14</p>
+                <p id="3b">Update every new order</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="col-lg-4 ">
+        <div class="card card-custom">
+            <div class="card-header">
+                Sales
+                <i class="fa-solid fa-chart-simple card-icon"></i>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="items">
+        <div id="available">
+            <p>Available Now</p>
+            <p>Newly Arrived</p>
+            <p>Items</p>
+        </div>
+        <div id="img">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>-->
+    <div id="items">
+        <div id="available">
+            <p>Available Now</p>
+            <p>Newly Arrived</p>
+            <p>Items</p>
+        </div>
+        <div id="img-container">
+            <div id="img">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="tbl">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Customer Address</th>
+                    <th scope="col">Customer Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</section>
+<br>
+
+
+<!----------------------------------Customer MNG---------------------------------------------------------------------------->
+<section id="customerSection">
+    <div class="cardCustomer">
+        <div class="cardC-header">
+            Customer Manage Form
+        </div>
+
+        <form>
+            <div class="form-group search-group">
+                <select id="selectCustomer" class="form-select">
+                    <option>Search Customer</option>
+                </select>
+                <a href="#" id="searchCustomer" class="btn btn-primary">Search</a>
+                <!--<a href="#" id="add-button" class="btn btn-primary">Add Item</a>-->
+                <a href="#" id="addCustomer" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCustomer">Add Customer</a>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="Cid" placeholder="Customer ID">
+                    </div>
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="Cname" placeholder="Customer Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="Caddress" placeholder="Customer Address">
+                    </div>
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="Ccontact" placeholder="Customer Contact">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="updateCustomer" class="btn btn-primary">Update</button>
+            <button type="button"  id="deleteCustomer" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+    <div class="tableContainer">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Customer Address</th>
+                <th scope="col">Customer Contact</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalCustomer">Add New Customer</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="idCustomer" placeholder="Customer ID">
+                <input type="text" class="form-control" id="nameCustomer" placeholder="Customer Name">
+                <input type="text" class="form-control" id="addressCustomer" placeholder="Customer Address">
+                <input type="text" class="form-control" id="contactCustomer" placeholder="Customer Contact">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveCustomer" class="btn btn-primary">Save</button>
+                <button type="button" id="closeCustomer" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-----------------------------------Item Mng-------------------------------------------------------------------------->
+
+<section id="itemSection">
+        <div class="cardItem">
+            <div class="cardT-header">
+                Item Manage Form
+            </div>
+
+            <form>
+                <div class="form-group search-group">
+                    <select id="selectItem" class="form-select">
+                        <option>Search Item</option>
+                    </select>
+                    <a href="#" id="searchItem" class="btn btn-primary">Search</a>
+                    <!--<a href="#" id="add-button" class="btn btn-primary">Add Item</a>-->
+                    <a href="#" id="addItem" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Add Item</a>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-field-group">
+                            <input type="text" class="form-control" id="iid" placeholder="Item ID">
+                        </div>
+                        <div class="text-field-group">
+                            <input type="text" class="form-control" id="iname" placeholder="Item Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-field-group">
+                            <input type="text" class="form-control" id="iprice" placeholder="Item Price">
+                        </div>
+                        <div class="text-field-group">
+                            <input type="text" class="form-control" id="iquntity" placeholder="Item Quantity">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="update" class="btn btn-primary">Update</button>
+                <button type="button"  id="delete" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+        <div class="tableContainer">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Item Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="mid" placeholder="Item ID">
+                    <input type="text" class="form-control" id="mname" placeholder="Item Name">
+                    <input type="text" class="form-control" id="mprice" placeholder="Item Price">
+                    <input type="text" class="form-control" id="mquntity" placeholder="Item Quantity">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="save" class="btn btn-primary">Save</button>
+                    <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---------------------------------------------------Orders------------------------------------------------------->
+<section id="ordersSection">
+    <div class="order-container">
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Invoice Details
+                </div>
+
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="selectName" class="form-label">Search Name</label>
+                                <select id="selectName" class="form-select">
+                                </select>
+                            </div>
+                            <div class="text-field-group">
+                                <label for="nname" class="form-label">Customer Address</label>
+                                <input type="text" class="form-control" >
+                            </div>
+                            <div class="text-field-group">
+                                <label for="naddress" class="form-label">Order ID</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="nadress" class="form-label">Customer ID</label>
+                                <input type="text" class="form-control datepicker" >
+                            </div>
+                            <div class="text-field-group">
+                                <label for="ncontact" class="form-label">Customer Contact</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="ncontact" class="form-label">Order Date</label>
+                                <input type="text" class="form-control" >
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Ordered Item Details
+                </div>
+
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="selectName" class="form-label">Search Name</label>
+                                <select id="selectNameitem" class="form-select">
+                                </select>
+                            </div>
+                            <div class="text-field-group">
+                                <label for="nname" class="form-label">Item Price</label>
+                                <input type="text" class="form-control" id="nname">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="naddress" class="form-label">Orders Qty</label>
+                                <input type="text" class="form-control" id="naddress">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="nadress" class="form-label">Item ID</label>
+                                <input type="text" class="form-control datepicker" id="nadress">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="ncontact" class="form-label">Qty On Hand</label>
+                                <input type="text" class="form-control" id="ncontact">
+                            </div>
+                            <div class="text-field-group">
+                                <button type="button" id="add" class="btn btn-primary">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Transaction Details
+                </div>
+
+                <form>
+                    <div class="subtotal row">
+                        <div class="col-md-6">
+                            <label for="subtotal1" class="form-label">Sub Total:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="subtotal1">
+                        </div>
+                    </div>
+                    <div class="nettotal row">
+                        <div class="col-md-6">
+                            <label for="nettotal1" class="form-label">Net Total:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="nettotal1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="cash" class="form-label">Cash</label>
+                                <input type="text" class="form-control" id="cash">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="balance" class="form-label">Balance</label>
+                                <input type="text" class="form-control datepicker" id="balance">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="discount" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="discount">
+                            </div>
+                            <div class="text-field-group">
+                                <button type="button" id="purchase" class="btn btn-primary">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </div>
+    <section id="tblOrders">
+        <div class="tableContainerOrders">
+            <table class="table" >
+                <thead>
+                <tr>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>Bird</td>
+                    <td>@twitter</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+
+</section>
+<!------------------------------------------------------------Scripts------------------------------------------------------>
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    $('#customerSection').css({display:'none'})
+    $('#itemSection').css({display:'none'})
+    $('#ordersSection').css({display:'none'})
+
+
+    $('#navItem').on('click',() =>{
+        $('#itemSection').css({display:'block'})
+        $('#customerSection').css({display:'none'})
+        $('#ordersSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+
+    })
+    $('#navCustomer').on('click',() =>{
+        $('#customerSection').css({display:'block'})
+        $('#itemSection').css({display:'none'})
+        $('#ordersSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+    })
+    $('#navOrders').on('click',() =>{
+        $('#ordersSection').css({display:'block'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+    })
+    $('#navDash').on('click',() =>{
+        $('#ordersSection').css({display:'none'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'block'})
+    })
+    $('#navDetails').on('click',() =>{
+        $('#ordersSection').css({display:'none'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'block'})
+    })
+
+</script>
+</body>
+</html>
