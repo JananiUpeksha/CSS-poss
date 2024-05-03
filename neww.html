@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="assets/styleSheets/customer.css">
     <link rel="stylesheet" type="text/css" href="assets/styleSheets/item.css">
     <link rel="stylesheet" type="text/css" href="assets/styleSheets/order.css">
+    <!--<link rel="stylesheet" type="text/css" href="assets/styleSheets/dashboard.css">-->
     <style>
         /*.card{
             width: 1500px;
@@ -167,6 +168,47 @@
             width: 1800px;
             margin: auto;
         }
+        @media (max-width: 1440px) {
+            #i1, #i2, #i3 {
+                width: 90%;
+                max-width: 450px;
+            }
+
+            #tbl {
+                display: block; /* Ensure the table is displayed */
+                width: 60%; /* Adjusted width for screens up to 1440px */
+                max-width: 1200px; /* Maximum width for larger screens */
+            }
+
+            .card-custom {
+                display: none; /* Hide the sales card */
+            }
+        }
+        @media (max-width: 1024px) {
+            #i1, #i2, #i3 {
+                width: 90%; /* Adjusted width for screens up to 1440px */
+                max-width: 300px; /* Maximum width for larger screens */
+            }
+
+            #tbl {
+                display: block; /* Ensure the table is displayed */
+                width: 60%; /* Adjusted width for screens up to 1440px */
+                max-width: 1200px; /* Maximum width for larger screens */
+            }
+
+            .card-custom {
+                display: none; /* Hide the sales card */
+            }
+            #items{
+                width: 600px;
+            }
+            #items > #available >p{
+                font-size: 20px;
+                text-align: left;
+            }
+
+        }
+
     </style>
 
 </head>

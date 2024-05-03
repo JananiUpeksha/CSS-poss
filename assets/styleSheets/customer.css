@@ -113,71 +113,120 @@
     color: black;
 }
 
+/*
 @media (max-width: 768px) {
     .navbar-nav {
         overflow: hidden;
-        margin-left: 0; /* Reset margin for smaller screens */
+        margin-left: 0; !* Reset margin for smaller screens *!
     }
     .customer {
-        width: auto; /* Adjust width for smaller screens */
-        padding: 10px; /* Add padding for smaller screens */
-        position: relative; /* Ensure the card respects the navbar's z-index */
-        z-index: 0; /* Set a lower z-index for the card */
+        width: auto; !* Adjust width for smaller screens *!
+        padding: 10px; !* Add padding for smaller screens *!
+        position: relative; !* Ensure the card respects the navbar's z-index *!
+        z-index: 0; !* Set a lower z-index for the card *!
     }
     .modal {
-        max-width: 100%; /* Adjust modal width for smaller screens */
+        max-width: 100%; !* Adjust modal width for smaller screens *!
     }
 }
 @media (max-width: 320px) {
     .navbar {
-        z-index: 1; /* Ensure navbar is above other elements */
+        z-index: 1; !* Ensure navbar is above other elements *!
     }
     .customer {
-        position: relative; /* Ensure the card respects the navbar's z-index */
-        z-index: 0; /* Set a lower z-index for the card */
-        width: auto; /* Adjust width for smaller screens */
-        padding: 10px; /* Add padding for smaller screens */
+        position: relative; !* Ensure the card respects the navbar's z-index *!
+        z-index: 0; !* Set a lower z-index for the card *!
+        width: auto; !* Adjust width for smaller screens *!
+        padding: 10px; !* Add padding for smaller screens *!
     }
 }
 @media (max-width: 1440px) {
     .navbar-nav {
         overflow: hidden;
-        margin-left: 0; /* Reset margin for smaller screens */
+        margin-left: 0; !* Reset margin for smaller screens *!
     }
     .customer {
-        width: auto; /* Adjust width for smaller screens */
-        padding: 10px; /* Add padding for smaller screens */
-        position: relative; /* Ensure the card respects the navbar's z-index */
-        z-index: 0; /* Set a lower z-index for the card */
+        width: auto; !* Adjust width for smaller screens *!
+        padding: 10px; !* Add padding for smaller screens *!
+        position: relative; !* Ensure the card respects the navbar's z-index *!
+        z-index: 0; !* Set a lower z-index for the card *!
     }
     .modal {
-        max-width: 100%; /* Adjust modal width for smaller screens */
+        max-width: 100%; !* Adjust modal width for smaller screens *!
     }
 }
 
 @media (max-width: 1024px) {
     .navbar-nav {
         overflow: hidden;
-        margin-left: 0; /* Reset margin for smaller screens */
+        margin-left: 0; !* Reset margin for smaller screens *!
     }
     .customer {
-        width: auto; /* Adjust width for smaller screens */
-        padding: 10px; /* Add padding for smaller screens */
-        position: relative; /* Ensure the card respects the navbar's z-index */
-        z-index: 0; /* Set a lower z-index for the card */
+        width: auto; !* Adjust width for smaller screens *!
+        padding: 10px; !* Add padding for smaller screens *!
+        position: relative; !* Ensure the card respects the navbar's z-index *!
+        z-index: 0; !* Set a lower z-index for the card *!
     }
     .modal {
-        max-width: 100%; /* Adjust modal width for smaller screens */
+        max-width: 100%; !* Adjust modal width for smaller screens *!
     }
 }
 @media (max-width: 320px) {
     .navbar {
-        z-index: 1; /* Ensure navbar is above other elements */
+        z-index: 1; !* Ensure navbar is above other elements *!
     }
     .customer {
-        position: relative; /* Ensure the card respects the navbar's z-index */
-        z-index: 0; /* Set a lower z-index for the card */
-        width: auto; /* Adjust width for smaller screens */
-        padding: 10px; /* Add padding for smaller screens */
+        position: relative; !* Ensure the card respects the navbar's z-index *!
+        z-index: 0; !* Set a lower z-index for the card *!
+        width: auto; !* Adjust width for smaller screens *!
+        padding: 10px; !* Add padding for smaller screens *!
     }
 }
+*/
+@media (max-width: 1440px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .cardCustomer {
+        width: 100%; /* Adjusted width for screens up to 1440px */
+        max-width: 1200px; /* Maximum width for larger screens */
+        margin: auto; /* Center the card */
+    }
+}
+@media (max-width: 1024px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .cardCustomer {
+        width: 100%; /* Adjusted width for screens up to 1024px */
+        max-width: 800px; /* Maximum width for larger screens */
+        margin: auto; /* Center the card */
+    }
+}
+@media (max-width: 770px) {
+    .navbar-nav {
+        overflow: hidden;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+    .cardCustomer {
+        width: 100%; /* Adjusted width for screens up to 770px */
+        max-width: 600px; /* Maximum width for larger screens */
+        margin: auto; /* Center the card */
+    }
+}
+@media (max-width: 400px) {
+    .navbar-nav {
+        display: none; /* Hide navbar for very small screens */
+    }
+    .cardCustomer {
+        width: 100%; /* Adjusted width for screens up to 400px */
+        max-width: 300px; /* Maximum width for larger screens */
+        margin: auto; /* Center the card */
+    }
+}
+
+
+
+
