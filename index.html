@@ -434,8 +434,8 @@
                 <th scope="col">Customer Contact</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
+            <tbody id="customerTableBody">
+            <!--<tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -452,7 +452,7 @@
                 <td>Larry</td>
                 <td>Bird</td>
                 <td>@twitter</td>
-            </tr>
+            </tr>-->
             </tbody>
         </table>
     </div>
@@ -532,8 +532,8 @@
                 <th scope="col">Item Quantity</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
+            <tbody id="itemTableBody">
+            <!--<tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -550,7 +550,7 @@
                 <td>Larry</td>
                 <td>Bird</td>
                 <td>@twitter</td>
-            </tr>
+            </tr>-->
             </tbody>
         </table>
     </div>
@@ -568,12 +568,13 @@
                 <input type="text" class="form-control" id="mid" placeholder="Item ID">
                 <input type="text" class="form-control" id="mname" placeholder="Item Name">
                 <input type="text" class="form-control" id="mprice" placeholder="Item Price">
-                <input type="text" class="form-control" id="mquntity" placeholder="Item Quantity">
+                <input type="text" class="form-control" id="mquantity" placeholder="Item Quantity">
+
 
             </div>
             <div class="modal-footer">
-                <button type="button" id="save" class="btn btn-primary">Save</button>
-                <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveItem" class="btn btn-primary">Save</button>
+                <button type="button" id="closeItem" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -767,6 +768,9 @@
 <!------------------------------------------------------------Scripts------------------------------------------------------>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/Customer.js"></script>
+<script src="js/Item.js"></script>
+
 <script>
     $('#customerSection').css({display:'none'})
     $('#itemSection').css({display:'none'})
