@@ -1,31 +1,30 @@
 var customers = [];
 var recordIndex = undefined;
 
-function loadTable() {
-    $('#customerTableBody').empty();
-    customers.map((item, index) => {
+function loadCustomerTable() {
+    $('#customerTableBody').empty(); // Clear existing table rows
+    customers.forEach(function(customer) { // Iterate over each customer in the array
+        // Create a table row for each customer and populate it with customer data
         let record = `<tr>
-        <td class="cus-id-value">${item.id}</td>
-        <td class="cus-name-value">${item.name}</td>
-        <td class="cus-address-value">${item.address}</td>
-        <td class="cus-contact-value">${item.contact}</td>
-        </tr>`;
-
-        $('#customerTableBody').append(record);
-
+            <td class="cus-id-value">${customer.id}</td>
+            <td class="cus-name-value">${customer.name}</td>
+            <td class="cus-address-value">${customer.address}</td>
+            <td class="cus-contact-value">${customer.contact}</td>
+            </tr>`;
+        $('#customerTableBody').append(record); // Append the row to the table body
     });
 }
 
-$('#saveCustomer').on( "click", function (){
+$('#saveCustomer').on("click", function() {
     var cusId = $('#idCustomer').val();
     var cusName = $('#nameCustomer').val();
     var cusAddress = $('#addressCustomer').val();
     var cusContact = $('#contactCustomer').val();
 
-    console.log("Id: " , cusId);
-    console.log("Name: " , cusName);
-    console.log("Contact: " , cusContact);
-    console.log("address: " , cusAddress);
+    console.log("Id: ", cusId);
+    console.log("Name: ", cusName);
+    console.log("Contact: ", cusContact);
+    console.log("Address: ", cusAddress);
 
     let customer = {
         id: cusId,
@@ -36,12 +35,12 @@ $('#saveCustomer').on( "click", function (){
 
     customers.push(customer);
     console.log(customers);
-    loadTable();
-    $('#customer-reset').click();
-    clearCardInputs();
+    loadCustomerTable();
+    $('#closeCustomer').click(); // Close the modal
+    clearCustomerInputs();
 });
 
-$('#customerTableBody').on('click', 'tr', function () {
+$('#customerTableBody').on('click', 'tr', function() {
     recordIndex = $(this).index(); // Set recordIndex when a table row is clicked
     console.log("recordIndex:", recordIndex); // Add this line to check recordIndex value
 
@@ -56,7 +55,7 @@ $('#customerTableBody').on('click', 'tr', function () {
     $('#Ccontact').val(contact);
 });
 
-$('#updateCustomer').on("click", function () {
+$('#updateCustomer').on("click", function() {
     var cusId = $('#Cid').val();
     var cusName = $('#Cname').val();
     var cusAddress = $('#Caddress').val();
@@ -73,28 +72,27 @@ $('#updateCustomer').on("click", function () {
         customerObject.contact = cusContact;
 
         // Reload the table with updated data
-        loadTable();
-        $('#customer-reset').click(); // Reset card inputs
-        clearCardInputs(); // Clear remaining data from input fields
+        loadCustomerTable();
+        $('#closeCustomer').click(); // Close the modal
+        clearCustomerInputs(); // Clear remaining data from input fields
     } else {
         console.error("No customer selected for update or invalid index.");
     }
 });
 
-$('#deleteCustomer').on("click", function () {
+$('#deleteCustomer').on("click", function() {
     // Check if recordIndex is defined and within the range of customers array
     if (recordIndex !== undefined && recordIndex >= 0 && recordIndex < customers.length) {
         customers.splice(recordIndex, 1); // Remove the customer at the specified index
-        loadTable(); // Reload the table with updated data
-        $('#customer-reset').click(); // Reset card inputs
-        clearCardInputs(); // Clear remaining data from input fields
+        loadCustomerTable(); // Reload the table with updated data
+        clearCustomerInputs(); // Clear remaining data from input fields
     } else {
         console.error("No customer selected for deletion or invalid index.");
     }
 });
 
-// Function to clear remaining data from input fields
-function clearCardInputs() {
+// Function to clear remaining data from customer input fields
+function clearCustomerInputs() {
     $('#Cid').val('');
     $('#Cname').val('');
     $('#Caddress').val('');
@@ -104,29 +102,72 @@ function clearCardInputs() {
     $('#addressCustomer').val('');
     $('#contactCustomer').val('');
 }
-// Call initialize function when the page loads
-$(document).ready(function() {
-    loadCustomer();
-});
 
-function loadCustomer() {
-    $('#selectCustomer').empty(); // Clear existing options
+var selectCustomer = document.getElementById('selectCustomer');
 
-    // Add a default option
-    $('#selectCustomer').append($('<option>', {
-        value: '',
-        text: 'Select Customer'
-    }));
-
-    // Iterate over customers array and add options for each customer
-    customers.forEach(function(customer, index) {
-        $('#selectCustomer').append($('<option>', {
-            value: index, // Use index as value
-            text: customer.name // Display customer name
-        }));
+// Function to populate the select box with customer names
+function populateSelect() {
+    empty(selectCustomer); // Clear existing options
+    customers.forEach(function(customer) {
+        var customerName = customer.name; // Extract customer name
+        addOption(customerName, selectCustomer); // Add option to select
     });
 }
 
+// Event listener for when the select box is clicked
+$('#selectCustomer').on('click', function() {
+    populateSelect(); // Populate the select box with customer names
+});
+
+// Create a new MutationObserver
+var observer = new MutationObserver(function(mutationsList) {
+    for(var mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            populateSelect(); // If there are changes in the customer table, repopulate the select box
+            break; // Exit the loop after the first mutation
+        }
+    }
+});
+
+// Start observing the customer table for changes
+observer.observe(document.getElementById('customerTableBody'), { childList: true });
+
+function empty(select) {
+    select.innerHTML = '';
+}
+
+function addOption(val, select) {
+    var option = document.createElement('option');
+    option.value = val;
+    option.innerHTML = val;
+    select.appendChild(option);
+}
 
 
+//----------data drop down eken select klma anith ewta set wenna
+
+$('#selectCustomer').on('change', function() {
+    var selectedName = $(this).val(); // Get the selected customer name from the dropdown
+
+    if (selectedName !== "Search Customer") {
+        // Find the customer object with the selected name
+        var selectedCustomer = customers.find(function(customer) {
+            return customer.name === selectedName;
+        });
+
+        if (selectedCustomer) {
+            // If a customer with the selected name is found, update the input fields with their data
+            $('#Cid').val(selectedCustomer.id);
+            $('#Cname').val(selectedCustomer.name);
+            $('#Caddress').val(selectedCustomer.address);
+            $('#Ccontact').val(selectedCustomer.contact);
+        } else {
+            // If no customer with the selected name is found, clear the input fields
+            clearCustomerInputs();
+        }
+    } else {
+        // If "Search Customer" option is selected, clear the input fields
+        clearCustomerInputs();
+    }
+});
 
