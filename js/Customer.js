@@ -37,7 +37,7 @@ $('#saveCustomer').on("click", function() {
     console.log(customers);
     loadCustomerTable();
     $('#closeCustomer').click(); // Close the modal
-    clearCustomerInputs();
+    clearCustomerInputs()
 });
 
 $('#customerTableBody').on('click', 'tr', function() {
@@ -55,6 +55,30 @@ $('#customerTableBody').on('click', 'tr', function() {
     $('#Ccontact').val(contact);
 });
 
+/*$('#updateCustomer').on("click", function() {
+    var cusId = $('#Cid').val();
+    var cusName = $('#Cname').val();
+    var cusAddress = $('#Caddress').val();
+    var cusContact = $('#Ccontact').val();
+
+    // Check if recordIndex is defined and within the range of customers array
+    if (recordIndex !== undefined && recordIndex >= 0 && recordIndex < customers.length) {
+        let customerObject = customers[recordIndex];
+
+        // Update customer object with new values
+        customerObject.id = cusId;
+        customerObject.name = cusName;
+        customerObject.address = cusAddress;
+        customerObject.contact = cusContact;
+
+        // Reload the table with updated data
+        loadCustomerTable();
+        $('#closeCustomer').click(); // Close the modal
+        clearCustomerInputs(); // Clear remaining data from input fields
+    } else {
+        console.error("No customer selected for update or invalid index.");
+    }
+});*/
 $('#updateCustomer').on("click", function() {
     var cusId = $('#Cid').val();
     var cusName = $('#Cname').val();
@@ -92,6 +116,7 @@ $('#deleteCustomer').on("click", function() {
 });
 
 // Function to clear remaining data from customer input fields
+// Function to clear remaining data from customer input fields
 function clearCustomerInputs() {
     $('#Cid').val('');
     $('#Cname').val('');
@@ -102,11 +127,8 @@ function clearCustomerInputs() {
     $('#addressCustomer').val('');
     $('#contactCustomer').val('');
 }
-
-var selectCustomer = document.getElementById('selectCustomer');
-
 // Function to populate the select box with customer names
-function populateSelect() {
+function populateCustomerSelect() {
     empty(selectCustomer); // Clear existing options
     customers.forEach(function(customer) {
         var customerName = customer.name; // Extract customer name
@@ -116,51 +138,28 @@ function populateSelect() {
 
 // Event listener for when the select box is clicked
 $('#selectCustomer').on('click', function() {
-    populateSelect(); // Populate the select box with customer names
+    populateCustomerSelect(); // Populate the select box with customer names
 });
 
-// Create a new MutationObserver
-var observer = new MutationObserver(function(mutationsList) {
-    for(var mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            populateSelect(); // If there are changes in the customer table, repopulate the select box
-            break; // Exit the loop after the first mutation
-        }
-    }
-});
-
-// Start observing the customer table for changes
-observer.observe(document.getElementById('customerTableBody'), { childList: true });
-
-function empty(select) {
-    select.innerHTML = '';
-}
-
-function addOption(val, select) {
-    var option = document.createElement('option');
-    option.value = val;
-    option.innerHTML = val;
-    select.appendChild(option);
-}
-
-
-//----------data drop down eken select klma anith ewta set wenna
-
+// Event listener for when the select box value changes
 $('#selectCustomer').on('change', function() {
     var selectedName = $(this).val(); // Get the selected customer name from the dropdown
 
     if (selectedName !== "Search Customer") {
-        // Find the customer object with the selected name
+        // Find the index of the selected customer in the customers array
         var selectedCustomer = customers.find(function(customer) {
             return customer.name === selectedName;
         });
 
         if (selectedCustomer) {
-            // If a customer with the selected name is found, update the input fields with their data
+            // If the customer is found, update the input fields with its data
             $('#Cid').val(selectedCustomer.id);
             $('#Cname').val(selectedCustomer.name);
             $('#Caddress').val(selectedCustomer.address);
             $('#Ccontact').val(selectedCustomer.contact);
+
+            // Update recordIndex to the index of the selected customer in the array
+            recordIndex = customers.indexOf(selectedCustomer);
         } else {
             // If no customer with the selected name is found, clear the input fields
             clearCustomerInputs();
