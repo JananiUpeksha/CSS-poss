@@ -1,4 +1,6 @@
-var items = [];
+import ItemModel from "../Model/ItemModel.js";
+import {items} from "../DB/db.js"
+/*var items = [];*/
 var itemIndex = undefined; // Rename recordIndex to itemIndex
 
 function loadTable() {
@@ -26,12 +28,13 @@ $('#saveItem').on("click", function (){
     console.log("Price: " , itemPrice);
     console.log("Quantity: " , itemQuantity);
 
-    let item = {
+   /* let item = {
         id: itemId,
         name: itemName,
         price: itemPrice,
         quantity: itemQuantity
-    }
+    }*/
+    let item = new ItemModel(itemId,itemName,itemPrice,itemQuantity);
 
     items.push(item);
     console.log(items);

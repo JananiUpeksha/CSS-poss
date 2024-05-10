@@ -1,4 +1,6 @@
-var customers = [];
+import CustomerModel from "../Model/CustomerModel.js";
+import {customers} from "../DB/db.js"
+/*var customers = [];*/
 var recordIndex = undefined;
 
 function loadCustomerTable() {
@@ -25,6 +27,7 @@ $('#saveCustomer').on("click", function() {
     console.log("Name: ", cusName);
     console.log("Contact: ", cusContact);
     console.log("Address: ", cusAddress);
+/*
 
     let customer = {
         id: cusId,
@@ -32,6 +35,8 @@ $('#saveCustomer').on("click", function() {
         address: cusAddress,
         contact: cusContact
     }
+*/
+    let customer = new CustomerModel(cusId,cusName,cusAddress,cusContact);
 
     customers.push(customer);
     console.log(customers);
@@ -127,14 +132,27 @@ function clearCustomerInputs() {
     $('#addressCustomer').val('');
     $('#contactCustomer').val('');
 }
+// Function to clear options of a select box
+function clearSelectOptions(selectElement) {
+    $(selectElement).empty(); // Clear all child elements of the select box
+}
+
 // Function to populate the select box with customer names
 function populateCustomerSelect() {
-    empty(selectCustomer); // Clear existing options
+    clearSelectOptions('#selectCustomer'); // Clear existing options
     customers.forEach(function(customer) {
         var customerName = customer.name; // Extract customer name
-        addOption(customerName, selectCustomer); // Add option to select
+        addOption(customerName, '#selectCustomer'); // Add option to select
     });
 }
+// Function to add an option to a select box
+function addOption(text, selectElement) {
+    $(selectElement).append($('<option>', {
+        value: text,
+        text: text
+    }));
+}
+
 
 // Event listener for when the select box is clicked
 $('#selectCustomer').on('click', function() {
