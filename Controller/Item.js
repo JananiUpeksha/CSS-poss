@@ -28,6 +28,12 @@ $('#saveItem').on("click", function (){
     console.log("Price: " , itemPrice);
     console.log("Quantity: " , itemQuantity);
 
+    // Validate item inputs
+    if (!validateItemInputs(itemId, itemName, itemPrice)) {
+        console.error("Invalid item details. Please check and try again.");
+        return; // Exit function if validation fails
+    }
+
    /* let item = {
         id: itemId,
         name: itemName,
@@ -62,6 +68,12 @@ $('#update').on("click", function () {
     var itemName = $('#iname').val();
     var itemPrice = $('#iprice').val();
     var itemQuantity = $('#iquntity').val();
+
+    // Validate item inputs
+    if (!validateItemInputs(itemId, itemName, itemPrice)) {
+        console.error("Invalid item details. Please check and try again.");
+        return; // Exit function if validation fails
+    }
 
     if (itemIndex !== undefined && itemIndex >= 0 && itemIndex < items.length) {
         let itemObject = items[itemIndex];
@@ -164,4 +176,26 @@ $('#selectItem').on('change', function() {
         clearItemInputs();
     }
 });
+//-------------------------------------------------------------------------------
+// Function to validate item ID
+function validateItemId(itemId) {
+    return itemId.match(/^I00\d+$/);
+}
 
+// Function to validate item name
+function validateItemName(itemName) {
+    return itemName.length >= 5;
+}
+
+// Function to validate item price
+function validateItemPrice(itemPrice) {
+    return itemPrice.endsWith(".00");
+}
+// Function to validate item inputs (ID, name, price)
+function validateItemInputs(itemId, itemName, itemPrice) {
+    return (
+        validateItemId(itemId) &&
+        validateItemName(itemName) &&
+        validateItemPrice(itemPrice)
+    );
+}

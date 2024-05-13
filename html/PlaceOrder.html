@@ -284,7 +284,7 @@
                 Ordered Item Details
             </div>
 
-            <form>
+            <!--<form>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="text-field-group">
@@ -315,7 +315,63 @@
                         </div>
                     </div>
                 </div>
+            </form>-->
+            <form>
+                <div class="row">
+                    <!-- First Row -->
+                    <div class="col-md-6">
+                        <div class="text-field-group">
+                            <label for="selectName" class="form-label">Search Item</label>
+                            <select id="selectNameitem" class="form-select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-field-group">
+                            <label for="orderItemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="orderItemName">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Second Row -->
+                    <div class="col-md-4">
+                        <div class="text-field-group">
+                            <label for="orderItemid" class="form-label">Item ID</label>
+                            <input type="text" class="form-control datepicker" id="orderItemId">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-field-group">
+                            <label for="orderItemQTYhand" class="form-label">Qty On Hand</label>
+                            <input type="text" class="form-control" id="orderItemQTYhand">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Add an additional column here for the new input field -->
+                        <div class="text-field-group">
+                            <label for="orderItemPrice" class="form-label">ItemPrice</label>
+                            <input type="text" class="form-control" id="orderItemPrice">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Third Row -->
+                    <div class="col-md-6">
+                        <div class="text-field-group">
+                            <label for="orderQTY" class="form-label">Orders Qty</label>
+                            <input type="text" class="form-control" id="orderQTY">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-field-group d-grid">
+                            <button type="button" id="add" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
             </form>
+
+
         </div>
     </section>
 

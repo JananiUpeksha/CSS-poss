@@ -92,12 +92,12 @@
     background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
     color: black;
 }
-#save{
+#saveItem{
     background-color: #e2a9ca;
     border: #e2a9ca;
     color: black;
 }
-#close{
+#closeItem{
     background-color: #ffe0b9;
     border: #ffe0b9;
     color: black;

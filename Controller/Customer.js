@@ -36,6 +36,13 @@ $('#saveCustomer').on("click", function() {
         contact: cusContact
     }
 */
+
+    // Validate customer inputs
+    if (!validateCustomerInputs(cusId, cusName, cusAddress, cusContact)) {
+        console.error("Invalid customer details. Please check and try again.");
+        return; // Exit function if validation fails
+    }
+
     let customer = new CustomerModel(cusId,cusName,cusAddress,cusContact);
 
     customers.push(customer);
@@ -89,6 +96,13 @@ $('#updateCustomer').on("click", function() {
     var cusName = $('#Cname').val();
     var cusAddress = $('#Caddress').val();
     var cusContact = $('#Ccontact').val();
+
+    // Validate customer inputs
+    if (!validateCustomerInputs(cusId, cusName, cusAddress, cusContact)) {
+        console.error("Invalid customer details. Please check and try again.");
+        return; // Exit function if validation fails
+    }
+
 
     // Check if recordIndex is defined and within the range of customers array
     if (recordIndex !== undefined && recordIndex >= 0 && recordIndex < customers.length) {
@@ -187,4 +201,36 @@ $('#selectCustomer').on('change', function() {
         clearCustomerInputs();
     }
 });
+
+// Function to validate customer ID
+function validateCustomerId(cusId) {
+    return cusId.match(/^C00\d+$/);
+}
+
+// Function to validate customer name
+function validateCustomerName(cusName) {
+    return cusName.length >= 5;
+}
+
+// Function to validate customer address
+function validateCustomerAddress(cusAddress) {
+    // Address validation (example: at least 10 characters)
+    return cusAddress.length >= 5;
+}
+
+// Function to validate customer contact
+function validateCustomerContact(cusContact) {
+    return /^\d{10}$/.test(cusContact); // Ensure exactly 10 digits
+}
+
+// Function to validate customer inputs (ID, name, address, contact)
+function validateCustomerInputs(cusId, cusName, cusAddress, cusContact) {
+    return (
+        validateCustomerId(cusId) &&
+        validateCustomerName(cusName) &&
+        validateCustomerAddress(cusAddress) &&
+        validateCustomerContact(cusContact)
+    );
+}
+
 

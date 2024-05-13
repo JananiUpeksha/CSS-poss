@@ -594,12 +594,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="text-field-group">
-                                <label for="selectNameOrders" class="form-label">Search Name</label>
+                                <label for="selectNameOrders" class="form-label">Search Customer</label>
                                 <select id="selectNameOrders" class="form-select">
                                 </select>
                             </div>
                             <div class="text-field-group">
-                                <label for="cusnameOrders" class="form-label">Customer Address</label>
+                                <label for="cusnameOrders" class="form-label">Customer Name</label>
                                 <input type="text" class="form-control" id="cusnameOrders">
                             </div>
 
@@ -636,29 +636,90 @@
 
                 <form>
                     <div class="row">
+                        <!-- First Row -->
                         <div class="col-md-6">
                             <div class="text-field-group">
-                                <label for="selectNameitemOrders" class="form-label">Search Name</label>
-                                <select id="selectNameitemOrders" class="form-select">
+                                <label for="selectNameitem" class="form-label">Search Item</label>
+                                <select id="selectNameitem" class="form-select">
                                 </select>
-                            </div>
-                            <div class="text-field-group">
-                                <label for="itemPriceOrders" class="form-label">Item Price</label>
-                                <input type="text" class="form-control" id="itemPriceOrders">
-                            </div>
-                            <div class="text-field-group">
-                                <label for="naddress" class="form-label">Orders Qty</label>
-                                <input type="text" class="form-control" id="naddress">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="text-field-group">
-                                <label for="itemIdOrders" class="form-label">Item ID</label>
-                                <input type="text" class="form-control datepicker" id="itemIdOrders">
+                                <label for="orderItemName" class="form-label">Item Name</label>
+                                <input type="text" class="form-control" id="orderItemName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Second Row -->
+                        <div class="col-md-4">
+                            <div class="text-field-group">
+                                <label for="orderItemid" class="form-label">Item ID</label>
+                                <input type="text" class="form-control datepicker" id="orderItemId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-field-group">
+                                <label for="orderItemQTYhand" class="form-label">Qty On Hand</label>
+                                <input type="text" class="form-control" id="orderItemQTYhand">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- Add an additional column here for the new input field -->
+                            <div class="text-field-group">
+                                <label for="orderItemPrice" class="form-label">ItemPrice</label>
+                                <input type="text" class="form-control" id="orderItemPrice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Third Row -->
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="orderQTY" class="form-label">Orders Qty</label>
+                                <input type="text" class="form-control" id="orderQTY">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group d-grid">
+                                <button type="button" id="add" class="btn btn-primary">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!--<section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Ordered Item Details
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <input type="text" class="form-control" id="selectNameitemOrders" placeholder="Search Name">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="text-field-group">
+                                        <input type="text" class="form-control" id="itemPriceOrders" placeholder="Item Price">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-field-group">
+                                        <input type="text" class="form-control" id="naddress" placeholder="Orders Qty">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <input type="text" class="form-control" id="itemIdOrders" placeholder="Item ID">
                             </div>
                             <div class="text-field-group">
-                                <label for="itemQtyOrders" class="form-label">Qty On Hand</label>
-                                <input type="text" class="form-control" id="itemQtyOrders">
+                                <input type="text" class="form-control" id="itemQtyOrders" placeholder="Qty On Hand">
                             </div>
                             <div class="text-field-group">
                                 <button type="button" id="add" class="btn btn-primary">Add to cart</button>
@@ -667,7 +728,8 @@
                     </div>
                 </form>
             </div>
-        </section>
+        </section>-->
+
 
         <section class="order">
             <div class="card">
