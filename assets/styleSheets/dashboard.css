@@ -166,22 +166,22 @@
 
 /* Added styling for individual slides */
 #img > div:nth-child(1) {
-    background-image: url("assets/1.jpg");
+    background-image: url("../../assets/1.jpg");
 }
 
 #img > div:nth-child(2) {
-    background-image: url("assets/2.jpg");
+    background-image: url("../../assets/2.jpg");
 }
 
 #img > div:nth-child(3) {
-    background-image: url("assets/3.jpg");
+    background-image: url("../../assets/3.jpg");
 }
 
 #img > div:nth-child(4) {
-    background-image: url("assets/4.jpg");
+    background-image: url("../../assets/4.jpg");
 }
 
 #img > div:nth-child(5) {
-    background-image: url("assets/5.jpg");
+    background-image: url("../../assets/5.jpg");
 }
 
