@@ -43,9 +43,9 @@
     background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
 }
 .form-select#selectCustomer {
-    width: auto;
+    width: 200px;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: -300px;
     margin-top: 10px;
 }
 #searchCustomer {
@@ -62,6 +62,27 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/*.text-field-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-md-6 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+
+.text-field-group .form-control {
+    width: 100%;
+    box-sizing: border-box; !* Ensure padding and border are included in the element's total width *!
+}*/
 #addCustomer{
     margin-left: 10px;
     background-color: #e2a9ca;
@@ -88,6 +109,11 @@
     background-color: #ffe0b9;
     border: #ffe0b9;
     color: black;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 /*-----------------------------------------------------------*/
 .modal{
@@ -204,6 +230,12 @@
         max-width: 800px; /* Maximum width for larger screens */
         margin: auto; /* Center the card */
     }
+    .form-select#selectCustomer {
+        width: 200px;
+        display: inline-block;
+        margin-left: -220px;
+        margin-top: 10px;
+    }
 }
 @media (max-width: 770px) {
     .navbar-nav {
@@ -214,6 +246,15 @@
         width: 100%; /* Adjusted width for screens up to 770px */
         max-width: 600px; /* Maximum width for larger screens */
         margin: auto; /* Center the card */
+    }
+    .form-select#selectCustomer {
+        width: 200px;
+        display: inline-block;
+        margin-left: -140px;
+        margin-top: 10px;
+    }
+    #searchCustomer{
+        display: none;
     }
 }
 @media (max-width: 400px) {

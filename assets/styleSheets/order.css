@@ -1,8 +1,8 @@
-.bg-body-tertiary {
-    background-color:#10182f !important; /* Change background color to red */
+/*.bg-body-tertiary {
+    background-color:#10182f !important; !* Change background color to red *!
 }
 .navbar .navbar-nav .nav-link {
-    color: white !important; /* Change font color to white */
+    color: white !important; !* Change font color to white *!
 }
 
 
@@ -12,7 +12,7 @@
 
 .navbar-nav .nav-item {
     margin-right: 50px;
-}
+}*/
 .order-container {
     display: flex;
     justify-content: space-around;
@@ -81,14 +81,42 @@
 
 .subtotal label,
 .nettotal label {
-    padding-right: 10px;
+    padding-right: 300px;
     padding-left: 10px;
+    position: absolute;
 }
 
 .subtotal input,
 .nettotal input {
     margin-left: -100px; /* Adjust the margin as needed */
 }
+/*.subtotal,
+.nettotal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; !* Optional: Adds spacing between rows *!
+}
+
+.subtotal .col-md-6,
+.nettotal .col-md-6 {
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    width: 150px;
+}
+
+.subtotal label,
+.nettotal label {
+    flex: 1;
+    padding-left: 100px;
+}
+
+.subtotal input,
+.nettotal input {
+    flex: 2;
+    margin-left: 10px; !* Optional: Adds space between label and input *!
+}*/
+
 #balance {
     width: 100%;
 }
@@ -104,6 +132,9 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+}
+#tableContainerOrders{
+    height: 500px;
 }
 /*@media (max-width: 768px) {
     .navbar-nav {
@@ -231,5 +262,32 @@
         margin-bottom: 20px;
     }
 }
+/*@media (max-width: 770px) and (min-width: 600px) {
+    form {
+        height: 600px; !* Adjust the height as needed *!
+    }
 
+    .order {
+        width: 90%;
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .order-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-field-group {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .order #selectName {
+        width: 100%;
+        margin-top: 10px;
+    }
+}*/
 

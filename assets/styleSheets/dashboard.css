@@ -19,7 +19,7 @@
 }
 
 .navbar-nav {
-    margin-left: 1350px;
+    margin-left:30px !important;
 }
 
 .navbar-nav .nav-item {
@@ -80,7 +80,7 @@
 }
 
 #tbl{
-    width: 1400px;
+    width: 1350px;
     height: 400px;
     background-color: lightgray;
     position: absolute;
@@ -92,7 +92,7 @@
     width: 500px;
     height: 300px;
     position: absolute;
-    left: 480px;
+    left: 500px;
     top: 165px;
 }
 .card-header{
@@ -184,4 +184,98 @@
 #img > div:nth-child(5) {
     background-image: url("../../assets/5.jpg");
 }
+@media (max-width: 1440px) {
+    #i1, #i2, #i3 {
+        width: 90%;
+        max-width: 450px;
+    }
 
+    #tbl {
+        display: block;
+        max-width: 800px;
+    }
+
+    .card-custom {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    #i1, #i2, #i3 {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #tbl {
+        display: block;
+        width: 58%;
+        max-width: 1200px;
+    }
+
+    .card-custom {
+        display: none;
+    }
+    #items{
+        width: 600px;
+    }
+    #items > #available >p{
+        font-size: 20px;
+        text-align: left;
+    }
+
+}
+@media (max-width: 770px) {
+    #i1, #i2, #i3 {
+        width: 60%;
+        max-width: 200px;
+    }
+
+    #tbl {
+        display: block;
+        width: 58%;
+        max-width: 1200px;
+    }
+
+    .card-custom {
+        display: none;
+    }
+    #items{
+        width: 450px;
+    }
+    #items > #available >p{
+        font-size: 20px;
+        margin-left: -145px;
+    }
+
+}
+@media (max-width: 575px) {
+    #i2, #i3 {
+        display: none;
+
+    }
+    #i1 {
+        max-width: 1000px;
+        width: 83%;
+        margin-top: 10px;
+        margin-left: 30px;
+        height: 150px;
+    }
+    #i1 #1b {
+        display: none;
+    }
+
+    #items{
+        width: 420px;
+        margin-top: 95px;
+        height: 240px;
+        margin-left: 50px;
+    }
+    #tbl {
+        display: block;
+        width: 80%;
+        max-width: 900px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+
+
+}

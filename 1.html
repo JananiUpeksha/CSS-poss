@@ -18,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styleSheets/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/styleSheets/customer.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/item.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/order.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="assets/styleSheets/login.css">
     <style>
         /*.card{
             width: 1500px;
@@ -36,7 +40,7 @@
         .cardCustomer,.cardItem{
             width: 1500px;
             height: 350px;
-            top: 0;
+            top:100px;
             left: 0;
             right: 0;
             bottom: 0;
@@ -60,6 +64,8 @@
             margin: auto; /* Center the table */
         }
 
+        /*------------------------------------------------item-----------------------------------*/
+
         /*body{
             margin: 0;
             padding: 0;
@@ -74,37 +80,227 @@
             position: absolute;
             right: 0;
         }*/
+        .order-container {
+            display: flex;
+            justify-content: space-around;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .order {
+            width: 350px;
+            height: 450px;
+            position: relative;
+        }
+        .order {
+            width: 600px;
+        }
+        .form-select#selectName {
+            width: 300px;
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        .text-field-group {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #add{
+            background-color: #ffe0b9;
+            border: #ffe0b9;
+            color: black;
+        }
+        #purchase{
+            background-color: #e2a9ca;
+            border: #e2a9ca;
+            color: black;
+        }
+        .form-label {
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+        .order #selectName {
+            width: 215px;
+            display: inline-block;
+            margin-top: -4px;
+        }
+        #add{
+            margin-top: 57px;
+            margin-left: 3px;
+            width: 100%;
+        }
+        .subtotal,
+        .nettotal {
+            display: flex;
+            align-items: center;
+        }
+
+        .subtotal label,
+        .nettotal label {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .subtotal input,
+        .nettotal input {
+            margin-left: -100px;
+        }
+        #balance {
+            width: 100%;
+        }
+        #purchase{
+            width: 100%;
+            margin-top: 52px;
+            margin-left: 3px;
+        }
+        #tblOrders{
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .tableContainerOrders{
+            width: 1800px;
+            margin: auto;
+        }
+        @media (max-width: 1440px) {
+            #i1, #i2, #i3 {
+                width: 90%;
+                max-width: 450px;
+            }
+
+            #tbl {
+                display: block;
+                width: 60%;
+                max-width: 1200px;
+            }
+
+            .card-custom {
+                display: none;
+            }
+        }
+        @media (max-width: 1024px) {
+            #i1, #i2, #i3 {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            #tbl {
+                display: block;
+                width: 60%;
+                max-width: 1200px;
+            }
+
+            .card-custom {
+                display: none;
+            }
+            #itemsDash{
+                width: 600px;
+            }
+            #items > #available >p{
+                font-size: 20px;
+                text-align: left;
+            }
+
+        }
+
     </style>
 
 </head>
 <body>
+<!--------------------------------------------------login window----------------------------------------->
+<section id="login">
+    <section id="log">
+        <div id="outer">
+            <div id="imgS">
+                <img src="../assets/user.png" alt="User Image">
+                <p>Login</p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-login">Login</button>
+            </form>
+            <p class="account-text">Do not have an account? Create here</p>
+            <div class="btn-register-container">
+                <a href="#" id="rejister-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalS">Register</a>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="modalS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-body">
+                <section id="rej">
+                    <div id="outerModal">
+                        <div id="imgM">
+                            <img src="../assets/user.png" alt="User Image">
+                            <p>Create Account</p>
+                        </div>
+                        <form>
+                            <div class="form-groupModal">
+                                <i class="fas fa-user"></i>
+                                <input type="text" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="form-groupModal">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="form-groupModal">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" class="form-control" placeholder="Confirm Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-signup">Sign Up</button>
+                        </form>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-------------------------------------navbar-------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="html/Dashboard.html">Home</a>
+                    <a class="nav-link active" id="navDash" >Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="html/Customer.html">Customers</a>
+                    <a class="nav-link active" id="navCustomer"  >Customers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="html/Item.html">Items</a>
+                    <a class="nav-link active"  id="navItem" >Items</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="html/PlaceOrder.html">Orders</a>
+                    <a class="nav-link active" id="navOrders" >Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="html/Details.html">Details</a>
+                    <a class="nav-link active" id="navDetails">Details</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<br><br>
-
 <!--------------------------------Dashboard----------------------------------------------------------->
-<section id="Dashboard">
+<section id="dashboardSection">
     <section id="info">
         <div id="i1" class="row">
             <div class="col">
@@ -129,7 +325,7 @@
         </div>
     </section>
 
-    <div class="col-lg-4 ">
+    <!--<div class="col-lg-4 ">
         <div class="card card-custom">
             <div class="card-header">
                 Sales
@@ -141,23 +337,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!--<div id="items">
-        <div id="available">
-            <p>Available Now</p>
-            <p>Newly Arrived</p>
-            <p>Items</p>
-        </div>
-        <div id="img">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </div>-->
-    <div id="items">
+
+    <div id="itemsDash">
         <div id="available">
             <p>Available Now</p>
             <p>Newly Arrived</p>
@@ -249,9 +431,7 @@
     </div>
 </section>
 <br>
-<br>
-<br>
-<br>
+
 
 <!----------------------------------Customer MNG---------------------------------------------------------------------------->
 <section id="customerSection">
@@ -303,8 +483,88 @@
                 <th scope="col">Customer Contact</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="customerTableBody">
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalCustomer">Add New Customer</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="idCustomer" placeholder="Customer ID">
+                <input type="text" class="form-control" id="nameCustomer" placeholder="Customer Name">
+                <input type="text" class="form-control" id="addressCustomer" placeholder="Customer Address">
+                <input type="text" class="form-control" id="contactCustomer" placeholder="Customer Contact">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveCustomer" class="btn btn-primary">Save</button>
+                <button type="button" id="closeCustomer" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-----------------------------------Item Mng-------------------------------------------------------------------------->
+
+<section id="itemSection">
+    <div class="cardItem">
+        <div class="cardT-header">
+            Item Manage Form
+        </div>
+
+        <form>
+            <div class="form-group search-group">
+                <select id="selectItem" class="form-select">
+                    <option>Search Item</option>
+                </select>
+                <a href="#" id="searchItem" class="btn btn-primary">Search</a>
+                <!--<a href="#" id="add-button" class="btn btn-primary">Add Item</a>-->
+                <a href="#" id="addItem" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Add Item</a>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="iid" placeholder="Item ID">
+                    </div>
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="iname" placeholder="Item Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="iprice" placeholder="Item Price">
+                    </div>
+                    <div class="text-field-group">
+                        <input type="text" class="form-control" id="iquntity" placeholder="Item Quantity">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="update" class="btn btn-primary">Update</button>
+            <button type="button"  id="delete" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+    <div class="tableContainer">
+        <table class="table">
+            <thead>
             <tr>
+                <th scope="col">Item ID</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Item Price</th>
+                <th scope="col">Item Quantity</th>
+            </tr>
+            </thead>
+            <tbody id="itemTableBody">
+            <!--<tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -321,143 +581,329 @@
                 <td>Larry</td>
                 <td>Bird</td>
                 <td>@twitter</td>
-            </tr>
+            </tr>-->
             </tbody>
         </table>
     </div>
 </section>
-<br>
-<br>
-<br>
-<br>
 
 <!-- Modal -->
-<div class="modal fade" id="modalCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Customer</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" id="mid" placeholder="Customer ID">
-                <input type="text" class="form-control" id="mname" placeholder="Customer Name">
-                <input type="text" class="form-control" id="maddress" placeholder="Customer Address">
-                <input type="text" class="form-control" id="mcontact" placeholder="Customer Contact">
+                <input type="text" class="form-control" id="mid" placeholder="Item ID">
+                <input type="text" class="form-control" id="mname" placeholder="Item Name">
+                <input type="text" class="form-control" id="mprice" placeholder="Item Price">
+                <input type="text" class="form-control" id="mquantity" placeholder="Item Quantity">
+
 
             </div>
             <div class="modal-footer">
-                <button type="button" id="save" class="btn btn-primary">Save</button>
-                <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveItem" class="btn btn-primary">Save</button>
+                <button type="button" id="closeItem" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 </section>
-<!-----------------------------------Item Mng-------------------------------------------------------------------------->
 
-<section>
-    <section class="item">
-        <div class="cardItem">
-            <div class="cardT-header">
-                Item Manage Form
+<!---------------------------------------------------Orders------------------------------------------------------->
+<section id="ordersSection">
+    <div class="order-container">
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Invoice Details
+                </div>
+
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="selectNameOrders" class="form-label">Search Customer</label>
+                                <select id="selectNameOrders" class="form-select">
+                                </select>
+                            </div>
+                            <div class="text-field-group">
+                                <label for="cusnameOrders" class="form-label">Customer Name</label>
+                                <input type="text" class="form-control" id="cusnameOrders">
+                            </div>
+
+                            <div class="text-field-group">
+                                <label for="orderId" class="form-label">Order ID</label>
+                                <input type="text" class="form-control" id="orderId" value="Or001" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="cusIdOrders" class="form-label">Customer ID</label>
+                                <input type="text" class="form-control datepicker" id="cusIdOrders" >
+                            </div>
+                            <div class="text-field-group">
+                                <label for="cusContactOrders" class="form-label">Customer Contact</label>
+                                <input type="text" class="form-control" id="cusContactOrders">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="orderDate" class="form-label">Order Date</label>
+                                <input type="text" class="form-control"  id="orderDate" disabled>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
             </div>
+        </section>
 
-            <form>
-                <div class="form-group search-group">
-                    <select id="selectName" class="form-select">
-                        <option>Search Item</option>
-                    </select>
-                    <a href="#" id="search-button" class="btn btn-primary">Search</a>
-                    <!--<a href="#" id="add-button" class="btn btn-primary">Add Item</a>-->
-                    <a href="#" id="add-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Add Item</a>
-
-
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Ordered Item Details
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="text-field-group">
-                            <input type="text" class="form-control" id="iid" placeholder="Item ID">
+
+                <form>
+                    <div class="row">
+                        <!-- First Row -->
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="selectNameitem" class="form-label">Search Item</label>
+                                <select id="selectNameitem" class="form-select">
+                                </select>
+                            </div>
                         </div>
-                        <div class="text-field-group">
-                            <input type="text" class="form-control" id="iname" placeholder="Item Name">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="orderItemName" class="form-label">Item Name</label>
+                                <input type="text" class="form-control" id="orderItemName">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="text-field-group">
-                            <input type="text" class="form-control" id="iprice" placeholder="Item Price">
+                    <div class="row">
+                        <!-- Second Row -->
+                        <div class="col-md-4">
+                            <div class="text-field-group">
+                                <label for="orderItemid" class="form-label">Item ID</label>
+                                <input type="text" class="form-control datepicker" id="orderItemId">
+                            </div>
                         </div>
-                        <div class="text-field-group">
-                            <input type="text" class="form-control" id="iquntity" placeholder="Item Quantity">
+                        <div class="col-md-4">
+                            <div class="text-field-group">
+                                <label for="orderItemQTYhand" class="form-label">Qty On Hand</label>
+                                <input type="text" class="form-control" id="orderItemQTYhand">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- Add an additional column here for the new input field -->
+                            <div class="text-field-group">
+                                <label for="orderItemPrice" class="form-label">ItemPrice</label>
+                                <input type="text" class="form-control" id="orderItemPrice">
+                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <!-- Third Row -->
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="orderQTY" class="form-label">Orders Qty</label>
+                                <input type="text" class="form-control" id="orderQTY">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group d-grid">
+                                <button type="button" id="add" class="btn btn-primary">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!--<section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Ordered Item Details
                 </div>
-                <button type="button" id="update" class="btn btn-primary">Update</button>
-                <button type="button"  id="delete" class="btn btn-primary">Delete</button>
-            </form>
-        </div>
-        <div class="tableContainer">
-            <table class="table">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <input type="text" class="form-control" id="selectNameitemOrders" placeholder="Search Name">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="text-field-group">
+                                        <input type="text" class="form-control" id="itemPriceOrders" placeholder="Item Price">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-field-group">
+                                        <input type="text" class="form-control" id="naddress" placeholder="Orders Qty">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <input type="text" class="form-control" id="itemIdOrders" placeholder="Item ID">
+                            </div>
+                            <div class="text-field-group">
+                                <input type="text" class="form-control" id="itemQtyOrders" placeholder="Qty On Hand">
+                            </div>
+                            <div class="text-field-group">
+                                <button type="button" id="add" class="btn btn-primary">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>-->
+
+
+        <section class="order">
+            <div class="card">
+                <div class="card-header">
+                    Transaction Details
+                </div>
+
+                <form>
+                    <div class="subtotal row">
+                        <div class="col-md-6">
+                            <label for="subtotal1" class="form-label">Sub Total:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="subtotal1">
+                        </div>
+                    </div>
+                    <div class="nettotal row">
+                        <div class="col-md-6">
+                            <label for="nettotal1" class="form-label">Net Total:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="nettotal1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="cash" class="form-label">Cash</label>
+                                <input type="text" class="form-control" id="cash">
+                            </div>
+                            <div class="text-field-group">
+                                <label for="balance" class="form-label">Balance</label>
+                                <input type="text" class="form-control datepicker" id="balance">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-field-group">
+                                <label for="discount" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="discount">
+                            </div>
+                            <div class="text-field-group">
+                                <button type="button" id="purchase" class="btn btn-primary">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </div>
+    <section id="tblOrders">
+        <div class="tableContainerOrders">
+            <table class="table" >
                 <thead>
                 <tr>
                     <th scope="col">Item ID</th>
                     <th scope="col">Item Name</th>
                     <th scope="col">Item Price</th>
-                    <th scope="col">Item Quantity</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Remove</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
+                <tbody id="orderTableBody">
+                <!--<tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Larry</td>
                     <td>Bird</td>
                     <td>@twitter</td>
-                </tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>-->
                 </tbody>
             </table>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" class="form-control" id="mid" placeholder="Item ID">
-                    <input type="text" class="form-control" id="mname" placeholder="Item Name">
-                    <input type="text" class="form-control" id="mprice" placeholder="Item Price">
-                    <input type="text" class="form-control" id="mquntity" placeholder="Item Quantity">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="save" class="btn btn-primary">Save</button>
-                    <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
-<!---------------------------------------------------details------------------------------------------------------->
-<section>
-
 </section>
+<!------------------------------------------------------------Scripts------------------------------------------------------>
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" src="Controller/Customer.js"></script>
+<script  type="module" src="Controller/Item.js"></script>
+<script type="module" src="Controller/Orders.js"></script>
 
+<script>
+    $('#customerSection').css({display:'none'})
+    $('#itemSection').css({display:'none'})
+    $('#ordersSection').css({display:'none'})
+
+
+    $('#navItem').on('click',() =>{
+        $('#itemSection').css({display:'block'})
+        $('#customerSection').css({display:'none'})
+        $('#ordersSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+
+    })
+    $('#navCustomer').on('click',() =>{
+        $('#customerSection').css({display:'block'})
+        $('#itemSection').css({display:'none'})
+        $('#ordersSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+    })
+    $('#navOrders').on('click',() =>{
+        $('#ordersSection').css({display:'block'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'none'})
+    })
+    $('#navDash').on('click',() =>{
+        $('#ordersSection').css({display:'none'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'block'})
+    })
+    $('#navDetails').on('click',() =>{
+        $('#ordersSection').css({display:'none'})
+        $('#itemSection').css({display:'none'})
+        $('#customerSection').css({display:'none'})
+        $('#dashboardSection').css({display:'block'})
+    })
+
+</script>
 </body>
 </html>

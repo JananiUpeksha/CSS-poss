@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b0624bcf-a46f-489d-8341-f22f5e46fa31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/customer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/customer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/item.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/item.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +51,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;SPA&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/janani/Downloads/Web-Based-Pos-System-SPA&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/janani/Desktop/02/CSS-poss&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -117,6 +124,13 @@
       <workItem from="1717431125196" duration="1889000" />
       <workItem from="1717472599831" duration="2062000" />
       <workItem from="1717490570732" duration="156000" />
+      <workItem from="1717576531726" duration="9509000" />
+      <workItem from="1717596298907" duration="11596000" />
+      <workItem from="1717682109887" duration="158000" />
+      <workItem from="1717727793244" duration="1666000" />
+      <workItem from="1717815212050" duration="41000" />
+      <workItem from="1717932804953" duration="4673000" />
+      <workItem from="1718011543848" duration="582000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-image: url("../assets/Title Page.jpg");
+    background-image: url("../Title Page.jpg");
 }
 #outer {
     width: 500px;
@@ -125,7 +125,7 @@ form {
     width: 80vw;
     height: 80vh;
     position: relative;
-    background-image: url("../assets/Title Page.jpg");
+    background-image: url("assets/Title Page.jpg");
     display: flex;
     align-items: center;
     justify-content: center;

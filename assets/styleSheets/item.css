@@ -33,9 +33,13 @@
     background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
 }
 .form-select#selectItem {
-    width: auto;
+    /*width: auto;
     display: inline-block;
     margin-left: 10px;
+    margin-top: 10px;*/
+    width: 200px;
+    display: inline-block;
+    margin-left: -300px;
     margin-top: 10px;
 }
 #searchItem {
@@ -79,6 +83,11 @@
     border: #ffe0b9;
     color: black;
 
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 /*-----------------------------------------------------------*/
 .modal{
@@ -172,6 +181,16 @@
         max-width: 1200px; /* Maximum width for larger screens */
         margin: auto; /* Center the card */
     }
+    .form-select#selectItem {
+        /*width: auto;
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 10px;*/
+        width: 200px;
+        display: inline-block;
+        margin-left: -220px;
+        margin-top: 10px;
+    }
 }
 @media (max-width: 1024px) {
     .navbar-nav {
@@ -182,6 +201,16 @@
         width: 100%; /* Adjusted width for screens up to 1024px */
         max-width: 800px; /* Maximum width for larger screens */
         margin: auto; /* Center the card */
+    }
+    .form-select#selectItem {
+        /*width: auto;
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 10px;*/
+        width: 200px;
+        display: inline-block;
+        margin-left: -140px;
+        margin-top: 10px;
     }
 }
 
