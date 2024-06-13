@@ -1,6 +1,6 @@
 import { customers } from "../DB/db.js";
 import { items } from "../DB/db.js";
-
+import {orders} from "../DB/db.js";
 console.log("hiiiiiiiiiiiiiiiiiiii")
 
 // Function to generate the next Order ID
@@ -101,4 +101,162 @@ function populateItemData(selectedName) {
 $('#selectNameitem').on('change', function() {
     var selectedName = $(this).val(); // Get the selected item name from the dropdown
     populateItemData(selectedName); // Populate the input fields with item data
+});
+
+/*--------------------------orders-----------------------------------------------*/
+// Function to add item to the order table
+/*
+function addItemToOrder() {
+    const orderQTY = parseInt($('#orderQTY').val(), 10);
+    const orderItemName = $('#orderItemName').val();
+    const orderItemId = $('#orderItemId').val();
+    const orderItemQTYhand = parseInt($('#orderItemQTYhand').val(), 10);
+    const orderItemPrice = parseFloat($('#orderItemPrice').val());
+
+    if (orderQTY > orderItemQTYhand) {
+        alert('Out of quantity');
+        return;
+    }
+
+    const total = orderQTY * orderItemPrice;
+    // Check if the item is already in the order table
+    const existingRow = $(`#orderTableBody tr[data-item-id="${orderItemId}"]`);
+    if (existingRow.length > 0) {
+        alert('This item is already in the cart');
+        return;
+    }
+
+    // Update table
+    $('#orderTableBody').append(`
+        <tr>
+            <td>${orderItemId}</td>
+            <td>${orderItemName}</td>
+            <td>${orderItemQTYhand}</td>
+            <td>${orderItemPrice}</td>
+            <td>${orderQTY}</td>
+            <td>${total.toFixed(2)}</td>
+        </tr>
+    `);
+
+    // Update subtotal
+    const currentSubtotal = parseFloat($('#subtotal1').val()) || 0;
+    const newSubtotal = currentSubtotal + orderItemPrice;
+    $('#subtotal1').val(newSubtotal.toFixed(2));
+
+    // Update net total
+    const currentNetTotal = parseFloat($('#nettotal').val()) || 0;
+    const newNetTotal = currentNetTotal + total;
+    $('#nettotal').val(newNetTotal.toFixed(2));
+
+    // Clear input fields
+    $('#orderQTY').val('');
+    $('#orderItemName').val('');
+    $('#orderItemId').val('');
+    $('#orderItemQTYhand').val('');
+    $('#orderItemPrice').val('');
+}
+
+// Event listener for Add to Cart button
+$('#add').on('click', addItemToOrder);
+
+// Function to populate input fields with data from a selected table row
+function populateFieldsFromTableRow(row) {
+    const itemId = $(row).data('item-id');
+    const itemName = $(row).find('td').eq(1).text();
+    const itemQTYhand = $(row).find('td').eq(2).text();
+    const itemPrice = $(row).find('td').eq(3).text();
+    const itemOrderQTY = $(row).find('td').eq(4).text();
+
+    $('#orderItemId').val(itemId);
+    $('#orderItemName').val(itemName);
+    $('#orderItemQTYhand').val(itemQTYhand);
+    $('#orderItemPrice').val(itemPrice);
+    $('#orderQTY').val(itemOrderQTY);
+}
+
+// Event listener for table row click
+$('#orderTableBody').on('click', 'tr', function() {
+    populateFieldsFromTableRow(this);
+});*/
+// Function to add item to the order table
+function addItemToOrder() {
+    const orderQTY = parseInt($('#orderQTY').val(), 10);
+    const orderItemName = $('#orderItemName').val();
+    const orderItemId = $('#orderItemId').val();
+    const orderItemQTYhand = parseInt($('#orderItemQTYhand').val(), 10);
+    const orderItemPrice = parseFloat($('#orderItemPrice').val());
+
+    if (orderQTY > orderItemQTYhand) {
+        alert('Out of quantity');
+        return;
+    }
+
+    const total = orderQTY * orderItemPrice;
+    // Check if the item is already in the order table
+    const existingRow = $(`#orderTableBody tr[data-item-id="${orderItemId}"]`);
+    if (existingRow.length > 0) {
+        alert('This item is already in the cart');
+        return;
+    }
+
+    // Update table
+    $('#orderTableBody').append(`
+        <tr data-item-id="${orderItemId}">
+            <td>${orderItemId}</td>
+            <td>${orderItemName}</td>
+            <td>${orderItemQTYhand}</td>
+            <td>${orderItemPrice}</td>
+            <td>${orderQTY}</td>
+            <td>${total.toFixed(2)}</td>
+        </tr>
+    `);
+
+    // Update subtotal
+    const currentSubtotal = parseFloat($('#subtotal1').val()) || 0;
+    const newSubtotal = currentSubtotal + orderItemPrice;
+    $('#subtotal1').val(newSubtotal.toFixed(2));
+
+    // Update net total
+    const currentNetTotal = parseFloat($('#nettotal').val()) || 0;
+    const newNetTotal = currentNetTotal + total;
+    $('#nettotal').val(newNetTotal.toFixed(2));
+
+    // Update the items array
+    const selectedItem = items.find(item => item.id === orderItemId);
+    if (selectedItem) {
+        selectedItem.quantity -= orderQTY;
+    }
+
+    // Clear input fields
+    $('#orderQTY').val('');
+    $('#orderItemName').val('');
+    $('#orderItemId').val('');
+    $('#orderItemQTYhand').val('');
+    $('#orderItemPrice').val('');
+}
+
+// Event listener for Add to Cart button
+$('#add').on('click', addItemToOrder);
+
+// Function to populate input fields with data from a selected table row
+function populateFieldsFromTableRow(row) {
+    const itemId = $(row).data('item-id');
+    const itemName = $(row).find('td').eq(1).text();
+    const itemQTYhand = $(row).find('td').eq(2).text();
+    const itemPrice = $(row).find('td').eq(3).text();
+    const itemOrderQTY = $(row).find('td').eq(4).text();
+
+    $('#orderItemId').val(itemId);
+    $('#orderItemName').val(itemName);
+    $('#orderItemQTYhand').val(itemQTYhand);
+    $('#orderItemPrice').val(itemPrice);
+    $('#orderQTY').val(itemOrderQTY);
+
+    // Also select the item in the dropdown
+    $('#selectNameitem').val(itemName);
+}
+
+// Event listener for table row click
+$('#orderTableBody').on('click', 'tr', function() {
+    populateFieldsFromTableRow(this);
 });

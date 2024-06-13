@@ -667,7 +667,6 @@
 
                 <form>
                     <div class="row">
-                        <!-- First Row -->
                         <div class="col-md-6">
                             <div class="text-field-group">
                                 <label for="selectNameitem" class="form-label">Search Item</label>
@@ -683,7 +682,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <!-- Second Row -->
                         <div class="col-md-4">
                             <div class="text-field-group">
                                 <label for="orderItemid" class="form-label">Item ID</label>
@@ -697,7 +695,6 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <!-- Add an additional column here for the new input field -->
                             <div class="text-field-group">
                                 <label for="orderItemPrice" class="form-label">ItemPrice</label>
                                 <input type="text" class="form-control" id="orderItemPrice">
@@ -705,7 +702,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <!-- Third Row -->
                         <div class="col-md-6">
                             <div class="text-field-group">
                                 <label for="orderQTY" class="form-label">Orders Qty</label>
@@ -721,46 +717,6 @@
                 </form>
             </div>
         </section>
-        <!--<section class="order">
-            <div class="card">
-                <div class="card-header">
-                    Ordered Item Details
-                </div>
-                <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="text-field-group">
-                                <input type="text" class="form-control" id="selectNameitemOrders" placeholder="Search Name">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="text-field-group">
-                                        <input type="text" class="form-control" id="itemPriceOrders" placeholder="Item Price">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-field-group">
-                                        <input type="text" class="form-control" id="naddress" placeholder="Orders Qty">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-field-group">
-                                <input type="text" class="form-control" id="itemIdOrders" placeholder="Item ID">
-                            </div>
-                            <div class="text-field-group">
-                                <input type="text" class="form-control" id="itemQtyOrders" placeholder="Qty On Hand">
-                            </div>
-                            <div class="text-field-group">
-                                <button type="button" id="add" class="btn btn-primary">Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>-->
-
 
         <section class="order">
             <div class="card">
@@ -769,45 +725,26 @@
                 </div>
 
                 <form>
-                    <!--<div class="subtotal row">
-                        <div class="col-md-6">
-                            <label for="subtotal1" class="form-label">Sub Total:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="subtotal1">
-                        </div>
-                    </div>
-                    <div class="nettotal row">
-                        <div class="col-md-6">
-                            <label for="nettotal1" class="form-label">Net Total:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="nettotal1">
-                        </div>
-                    </div>-->
-
                     <div class="row">
-                        <!-- First Column -->
                         <div class="col-md-6">
                             <div class="text-field-group">
                                 <label for="subtotal1" class="form-label">Sub Total:</label>
                                 <input type="text" class="form-control" id="subtotal1">
                             </div>
                             <div class="text-field-group">
-                                <label for="nettotal1" class="form-label">Cash:</label>
-                                <input type="text" class="form-control" id="nettotal1">
+                                <label for="cash" class="form-label">Cash:</label>
+                                <input type="text" class="form-control" id="cash">
                             </div>
                             <div class="text-field-group">
-                                <label for="cash" class="form-label">Balance:</label>
-                                <input type="text" class="form-control" id="cash">
+                                <label for="balance" class="form-label">Balance:</label>
+                                <input type="text" class="form-control" id="balance">
                             </div>
                         </div>
 
-                        <!-- Second Column -->
                         <div class="col-md-6">
                             <div class="text-field-group">
-                                <label for="balance" class="form-label">Net Total:</label>
-                                <input type="text" class="form-control datepicker" id="balance">
+                                <label for="nettotal" class="form-label">Net Total:</label>
+                                <input type="text" class="form-control datepicker" id="nettotal">
                             </div>
                             <div class="text-field-group">
                                 <label for="discount" class="form-label">Discount:</label>
@@ -830,39 +767,13 @@
                 <tr>
                     <th scope="col">Item ID</th>
                     <th scope="col">Item Name</th>
+                    <th scope="col">Qty On Hand</th>
                     <th scope="col">Item Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total</th>
-                    <th scope="col">Remove</th>
                 </tr>
                 </thead>
                 <tbody id="orderTableBody">
-                <!--<tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>Bird</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-
-                </tr>-->
                 </tbody>
             </table>
         </div>
