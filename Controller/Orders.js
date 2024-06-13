@@ -260,3 +260,55 @@ function populateFieldsFromTableRow(row) {
 $('#orderTableBody').on('click', 'tr', function() {
     populateFieldsFromTableRow(this);
 });
+
+function calculateBalance() {
+    const netTotal = parseFloat($('#nettotal').val()) || 0;
+    let cash = parseFloat($('#cash').val()) || 0;
+    let discount = parseFloat($('#discount').val()) || 0;
+
+    // Ensure cash ends with .00
+    cash = parseFloat(cash.toFixed(2));
+    $('#cash').val(cash.toFixed(2));
+
+    // Remove any '%' symbol before parsing discount
+    if ($('#discount').val().includes('%')) {
+        discount = parseFloat($('#discount').val().replace('%', '')) || 0;
+    }
+
+    // Ensure discount ends with % with no decimal places if it's a whole number
+    const formattedDiscount = discount % 1 === 0 ? discount.toFixed(0) + '%' : discount.toFixed(2) + '%';
+    $('#discount').val(formattedDiscount);
+
+    // Calculate discount amount
+    const discountAmount = netTotal * (discount / 100);
+
+    // Calculate final total after discount
+    const finalTotal = netTotal - discountAmount;
+
+    // Calculate balance
+    const balance = cash - finalTotal;
+
+    // Display balance
+    $('#balance').val(balance.toFixed(2));
+
+    // For debugging purposes, log the values to the console
+    console.log({
+        netTotal,
+        cash,
+        discount,
+        discountAmount,
+        finalTotal,
+        balance
+    });
+}
+
+// Event listener for Place Order button
+$('#purchase').on('click', function() {
+    console.log('Place Order button clicked');
+    calculateBalance();
+});
+
+// Clear input fields
+$('#balance').val('');
+$('#cash').val('');
+$('#discount').val('');
