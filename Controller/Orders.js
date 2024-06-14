@@ -3,28 +3,21 @@ import { items } from "../DB/db.js";
 import {orders} from "../DB/db.js";
 console.log("hiiiiiiiiiiiiiiiiiiii")
 
-// Function to generate the next Order ID
 function generateNextOrderId(currentId) {
-    var num = parseInt(currentId.slice(2)) + 1; // Extract the numeric part and increment
+    var num = parseInt(currentId.slice(5)) + 1; // Extract the numeric part and increment
     var nextId = "ORDER" + ("000" + num).slice(-3); // Format the incremented number with leading zeros
     return nextId;
 }
 
-// Function to format the date as "YYYY-MM-DD"
 function formatDate(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
-
-// Get the current date
 const currentDate = new Date();
-
-// Set the value of the "Order Date" input field to the current date
 $('#orderDate').val(formatDate(currentDate));
 
-// Function to populate the select box with customer names
 function populateCustomerSelect() {
     $('#selectNameOrders').empty(); // Clear existing options
     customers.forEach(function(customer) {
@@ -35,35 +28,31 @@ function populateCustomerSelect() {
     });
 }
 $('#selectNameOrders').on('click', function() {
-    populateCustomerSelect(); // Populate the select box with customer names
+    populateCustomerSelect();
 });
 
 function populateCustomerData(selectedName) {
-    // Find the selected customer object from the customers array
     const selectedCustomer = customers.find(customer => customer.name === selectedName);
 
     if (selectedCustomer) {
-        // Populate the input fields with the selected customer's data
         $('#cusnameOrders').val(selectedCustomer.name);
         $('#cusIdOrders').val(selectedCustomer.id);
         $('#cusContactOrders').val(selectedCustomer.contact);
     } else {
-        // Clear the input fields if no customer is selected
         $('#cusnameOrders').val('');
         $('#cusIdOrders').val('');
         $('#cusContactOrders').val('');
     }
 }
 
-// Event listener for when the select box value changes
 $('#selectNameOrders').on('change', function() {
-    var selectedName = $(this).val(); // Get the selected customer name from the dropdown
-    populateCustomerData(selectedName); // Populate the input fields with customer data
+    var selectedName = $(this).val();
+    populateCustomerData(selectedName);
 });
 
 //-------------------------------ITEMS----------------------------------------
 function populateItemSelect() {
-    $('#selectNameitem').empty(); // Clear existing options
+    $('#selectNameitem').empty();
     items.forEach(function(item) {
         $('#selectNameitem').append($('<option>', {
             value: item.name,
@@ -72,24 +61,19 @@ function populateItemSelect() {
     });
 }
 
-// Event listener for when the select box is clicked
 $('#selectNameitem').on('click', function() {
-    populateItemSelect(); // Populate the select box with item names
+    populateItemSelect();
 });
 
-// Function to populate the input fields with item data when an item is selected
 function populateItemData(selectedName) {
-    // Find the selected item object from the items array
     const selectedItem = items.find(item => item.name === selectedName);
 
     if (selectedItem) {
-        // Populate the input fields with the selected item's data
         $('#orderItemName').val(selectedItem.name);
         $('#orderItemId').val(selectedItem.id);
         $('#orderItemQTYhand').val(selectedItem.quantity);//MODEL EKEN ENA NAMA DENNE
         $('#orderItemPrice').val(selectedItem.price);
     } else {
-        // Clear the input fields if no item is selected
         $('#orderItemName').val('');
         $('#orderItemId').val('');
         $('#orderItemQTYhand').val('');
@@ -97,7 +81,6 @@ function populateItemData(selectedName) {
     }
 }
 
-// Event listener for when the select box value changes
 $('#selectNameitem').on('change', function() {
     var selectedName = $(this).val(); // Get the selected item name from the dropdown
     populateItemData(selectedName); // Populate the input fields with item data
@@ -199,7 +182,6 @@ function addItemToOrder() {
         return;
     }
 
-    // Update table
     $('#orderTableBody').append(`
         <tr data-item-id="${orderItemId}">
             <td>${orderItemId}</td>
@@ -227,18 +209,15 @@ function addItemToOrder() {
         selectedItem.quantity -= orderQTY;
     }
 
-    // Clear input fields
     $('#orderQTY').val('');
     $('#orderItemName').val('');
     $('#orderItemId').val('');
     $('#orderItemQTYhand').val('');
     $('#orderItemPrice').val('');
+
 }
 
-// Event listener for Add to Cart button
 $('#add').on('click', addItemToOrder);
-
-// Function to populate input fields with data from a selected table row
 function populateFieldsFromTableRow(row) {
     const itemId = $(row).data('item-id');
     const itemName = $(row).find('td').eq(1).text();
@@ -251,12 +230,9 @@ function populateFieldsFromTableRow(row) {
     $('#orderItemQTYhand').val(itemQTYhand);
     $('#orderItemPrice').val(itemPrice);
     $('#orderQTY').val(itemOrderQTY);
-
-    // Also select the item in the dropdown
     $('#selectNameitem').val(itemName);
 }
 
-// Event listener for table row click
 $('#orderTableBody').on('click', 'tr', function() {
     populateFieldsFromTableRow(this);
 });
@@ -279,19 +255,11 @@ function calculateBalance() {
     const formattedDiscount = discount % 1 === 0 ? discount.toFixed(0) + '%' : discount.toFixed(2) + '%';
     $('#discount').val(formattedDiscount);
 
-    // Calculate discount amount
+
     const discountAmount = netTotal * (discount / 100);
-
-    // Calculate final total after discount
     const finalTotal = netTotal - discountAmount;
-
-    // Calculate balance
     const balance = cash - finalTotal;
-
-    // Display balance
     $('#balance').val(balance.toFixed(2));
-
-    // For debugging purposes, log the values to the console
     console.log({
         netTotal,
         cash,
@@ -302,13 +270,30 @@ function calculateBalance() {
     });
 }
 
-// Event listener for Place Order button
 $('#purchase').on('click', function() {
     console.log('Place Order button clicked');
     calculateBalance();
 });
 
-// Clear input fields
-$('#balance').val('');
-$('#cash').val('');
-$('#discount').val('');
+$('#newOrder').on('click', function() {
+    $('#subtotal1').val('');
+    $('#cash').val('');
+    $('#balance').val('');
+    $('#nettotal').val('');
+    $('#discount').val('');
+    $('#orderTableBody').empty();
+
+    $('#cusnameOrders').val('');
+    $('#cusIdOrders').val('');
+    $('#cusContactOrders').val('');
+
+    if (orders.length > 0) {
+        const newOrderId = generateNextOrderId(orders[orders.length - 1].id);
+        $('#orderId').val(newOrderId);
+    } else   {
+        $('#orderId').val('Or002');
+    }
+    $('#orderDate').val(formatDate(new Date()));
+    populateCustomerSelect();
+    populateItemSelect();
+});

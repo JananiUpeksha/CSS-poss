@@ -169,6 +169,13 @@
             width: 1800px;
             margin: auto;
         }
+        #newOrder {
+            background-image: linear-gradient(to right, #ffe0b9, #e2a9ca);
+            color: black;
+            border: 2px solid black;
+            margin-left: 155px; /* Aligns the button to the right */
+        }
+
 
     </style>
 
@@ -185,11 +192,11 @@
             <form>
                 <div class="form-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" id="username">
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" id="password">
                 </div>
                 <button type="button" class="btn btn-primary btn-login" id="loginBtn">Login</button>
             </form>
@@ -213,26 +220,24 @@
                         </div>
                         <form>
                             <div class="form-groupModal">
-                                <i class="fas fa-user"></i>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" placeholder="Username" id="Musername">
                             </div>
                             <div class="form-groupModal">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <!--<i class="fas fa-lock"></i>-->
+                                <input type="password" class="form-control" placeholder="Password" id="Mpassword">
                             </div>
                             <div class="form-groupModal">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <!--<i class="fas fa-lock"></i>-->
+                                <input type="password" class="form-control" placeholder="Confirm Password" id="MconfirmPassword">
                             </div>
                             <button type="submit" class="btn btn-primary btn-signup">Sign Up</button>
                         </form>
                     </div>
                 </section>
-
-
             </div>
         </div>
     </div>
+
     </div>
 </section>
 <section id="other">
@@ -253,9 +258,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="navOrders" >Orders</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link active" id="navDetails">Details</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </div>
@@ -722,6 +727,7 @@
             <div class="card">
                 <div class="card-header">
                     Transaction Details
+                    <button type="button" id="newOrder" class="btn btn-secondary">New Order</button>
                 </div>
 
                 <form>
@@ -752,6 +758,7 @@
                             </div>
                             <div class="text-field-group">
                                 <button type="button" id="purchase" class="btn btn-primary">Place Order</button>
+
                             </div>
                         </div>
                     </div>
@@ -782,80 +789,22 @@
 </section>
 </section>
 
-
-<!--<section id="login">
-    <section id="log">
-        <div id="outer">
-            <div id="imgS">
-                <img src="../assets/user.png" alt="User Image">
-                <p>Login</p>
-            </div>
-            <form>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-login">Login</button>
-            </form>
-            <p class="account-text">Do not have an account? Create here</p>
-            <div class="btn-register-container">
-                <a href="#" id="rejister-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalS">Register</a>
-            </div>
-        </div>
-
-
-    </section>
-    &lt;!&ndash; Modal &ndash;&gt;
-    <div class="modal fade" id="modalS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-body">
-                <section id="rej">
-                    <div id="outerModal">
-                        <div id="imgM">
-                            <img src="../assets/user.png" alt="User Image">
-                            <p>Create Account</p>
-                        </div>
-                        <form>
-                            <div class="form-groupModal">
-                                <i class="fas fa-user"></i>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="form-groupModal">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="form-groupModal">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" class="form-control" placeholder="Confirm Password">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-signup">Sign Up</button>
-                        </form>
-                    </div>
-                </section>
-
-
-            </div>
-        </div>
-    </div>
-    </div>
-</section>-->
 <!------------------------------------------------------------Scripts------------------------------------------------------>
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="module" src="Controller/Customer.js"></script>
 <script  type="module" src="Controller/Item.js"></script>
 <script type="module" src="Controller/Orders.js"></script>
-
+<script type="module" src="Controller/Users.js"></script>
+<script type="module" src="Controller/History..js"></script>
 <script>
     $('#login').css({display:'block'})
     $('#other').css({display:'none'})
     $('#customerSection').css({display:'none'})
     $('#itemSection').css({display:'none'})
     $('#ordersSection').css({display:'none'})
+    $('#history').css({display:'none'})
 
     $('#loginBtn').on('click',() =>{
         $('#other').css({display:'block'})
@@ -867,6 +816,8 @@
         $('#customerSection').css({display:'none'})
         $('#ordersSection').css({display:'none'})
         $('#dashboardSection').css({display:'none'})
+        $('#history').css({display:'none'})
+
 
     })
     $('#navCustomer').on('click',() =>{
@@ -874,26 +825,92 @@
         $('#itemSection').css({display:'none'})
         $('#ordersSection').css({display:'none'})
         $('#dashboardSection').css({display:'none'})
+        $('#history').css({display:'none'})
     })
     $('#navOrders').on('click',() =>{
         $('#ordersSection').css({display:'block'})
         $('#itemSection').css({display:'none'})
         $('#customerSection').css({display:'none'})
         $('#dashboardSection').css({display:'none'})
+        $('#history').css({display:'none'})
     })
     $('#navDash').on('click',() =>{
         $('#ordersSection').css({display:'none'})
         $('#itemSection').css({display:'none'})
         $('#customerSection').css({display:'none'})
         $('#dashboardSection').css({display:'block'})
+        $('#history').css({display:'none'})
     })
     $('#navDetails').on('click',() =>{
         $('#ordersSection').css({display:'none'})
         $('#itemSection').css({display:'none'})
         $('#customerSection').css({display:'none'})
-        $('#dashboardSection').css({display:'block'})
-    })
+        $('#history').css({display:'block'})
+    });
+    /*$(document).ready(function() {
+        $('#loginBtn').on('click', function() {
+            // Fetching input values
+            const username = $('#login-username').val().trim();
+            const password = $('#login-password').val().trim();
 
+            // Check if username and password are empty
+            if (username === '' || password === '') {
+                alert('Username and password are required.');
+                return;
+            }
+
+            // Check if username and password match the expected values
+            if (username !== 'janani' || password !== '1234') {
+                alert('Invalid username or password. Please try again.');
+                return;
+            }
+
+            // If username and password match, proceed with login
+            console.log('Login successful! Username:', username);
+
+            // Reset input fields after successful login
+            $('#login-username').val('');
+            $('#login-password').val('');
+
+            // Example: Show relevant sections after login (adjust as needed)
+            $('#other').css({ display: 'block' });
+            $('#login').css({ display: 'none' });
+        });
+    });*/
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get context of the canvas element we want to select
+        const ctx = document.getElementById('salesChart').getContext('2d');
+
+        // Sample data for the chart (replace with your actual data)
+        const chartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Sales Data',
+                data: [65, 59, 80, 81, 56, 55],
+                borderColor: 'rgb(54, 162, 235)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                tension: 0.1
+            }]
+        };
+
+        // Configuration options for the chart
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        // Create the chart
+        const salesChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: chartOptions
+        });
+    });
 
 </script>
 </body>

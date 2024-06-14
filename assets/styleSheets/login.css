@@ -125,7 +125,7 @@ form {
     width: 80vw;
     height: 80vh;
     position: relative;
-    background-image: url("assets/Title Page.jpg");
+    background-image: url("../../assets/Title Page.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,4 +202,5 @@ form {
     background-color: black;
     border: black;
 }
+
 

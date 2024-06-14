@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0624bcf-a46f-489d-8341-f22f5e46fa31" name="Changes" comment="" />
+    <list default="true" id="b0624bcf-a46f-489d-8341-f22f5e46fa31" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/DB/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styleSheets/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styleSheets/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -34,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "SPA",
-    "last_opened_file_path": "/home/janani/Downloads/webpossystemnew-main",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SPA&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/janani/Downloads/webpossystemnew-main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/lib" />
@@ -123,7 +131,10 @@
       <workItem from="1717932804953" duration="4673000" />
       <workItem from="1718011543848" duration="582000" />
       <workItem from="1718081447149" duration="7064000" />
-      <workItem from="1718246663478" duration="5173000" />
+      <workItem from="1718246663478" duration="10570000" />
+      <workItem from="1718282355003" duration="870000" />
+      <workItem from="1718289698746" duration="6620000" />
+      <workItem from="1718381450627" duration="5262000" />
     </task>
     <servers />
   </component>
